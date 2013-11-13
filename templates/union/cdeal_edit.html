@@ -1,0 +1,19 @@
+{% extends "base_site.html" %}
+{% block navigation %}{% include "tags/union_navigation.html" %}{% endblock %}
+{% block content %}
+	<div class="ads">
+        <div class="abs_input">
+            <form method="POST">{% csrf_token %}
+                <table><tr><td class="r">热门城市：</td><td><select id="cityKey" name="h_city"><option selected="selected"></option>{% for hc in h_cities %}<option {% if hc.slug == cdeal.division.slug %}selected="selected"{% endif %} value="{{ hc.slug }}">{{ hc.name }}</option>{% endfor %}</select></td></tr>
+                <tr><td class="r">其它城市：</td><td><select name="o_city"><option selected="selected"></option>{% for oc in o_cities %}<option {% if oc.slug == cdeal.division.slug  %}selected="selected"{% endif %}  value="{{ oc.slug }}">{{ oc.name }}</option>{% endfor %}</select></td></tr>
+                <tr><td class="r">分类：</td><td><select name="category">{% for category in categories %}<option {% ifequal category.slug cdeal.category.slug %}selected="selected"{% endifequal %} value="{{ category.slug }}">{{ category.title }}</option>{% endfor %}</select></td></tr>
+                <tr><td class="r">活动ID：</td><td><input type="text" class="text" name="deal_id" value="{{ cdeal.deal_id }}" /></td></tr>
+                <tr><td class="r">位置：</td><td><input type="text" class="text" name="position" value="{{ cdeal.position }}" /></td></tr>
+                <tr><td class="r">是否激活：</td><td><input class="text checkbox"  type="checkbox" name="is_active" {% if cdeal.is_active  %}checked="checked" value="1" {% endif %}></td></tr>
+                <tr><td class="r"></td><td><input value="确定" style="width:74px;height:28px;line-height:28px;margin:5px 0;" type="submit"></td></tr>
+                </table>
+            </form>
+        </div>
+	</div>
+{% endblock %}
+{% block extra_head %}<script type="text/javascript" src="{{ MEDIA_URL }}js/union.js"></script>{% endblock %} 

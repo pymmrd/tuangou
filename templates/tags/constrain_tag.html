@@ -1,0 +1,1 @@
+{% load guider_tags %}<div class="tfl"><dl class="tbox"><dt><strong>团购分类</strong></dt><dd>{% if cat_slug %}{% district slug cat_slug  %}{% else %}{% district slug  %}{% endif %}{% include "tags/district.html" %}{% include "tags/price_tag.html" %}</dd></dl></div>

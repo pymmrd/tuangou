@@ -1,0 +1,9 @@
+﻿$(function(){var domain = "http://www.laidiantuan.com"; var title= "最好的中国团购网站大全,美团,糯米等每日团购网的团购网站导航!汇集北京团购网,上海团购网,和包括广州,深圳,南京,杭州,成都,青岛,西安等的团购网站大全和团购导航";
+function share(name){if(name =="kaixin"){var url = 'http://www.kaixin001.com/repaste/share.php?rurl='+domain+'&rcontent='+encodeURIComponent("【来点团】"+title+ domain) + '&rtitle='+encodeURIComponent(title); window.open(url); return false;
+}else if(name =="renren"){var url = 'http://share.renren.com/share/buttonshare.do?link='+domain+'&title='+encodeURIComponent("【来点团】"+title+ domain); window.open(url); return false;
+}else if(name == "douban"){var url = 'http://www.douban.com/recommend/?url='+domain+'&title=' + encodeURIComponent("【来点团】"+title + domain); window.open(url);return false;
+}else if(name =="sina"){ var url = 'http://v.t.sina.com.cn/share/share.php?url='+domain+'&title=' + encodeURIComponent("@来点团#"+title); window.open(url); return false;
+}else if(name =="n163"){var url = 'link=http://t.58.com/&source='+ encodeURIComponent('来点团')+ '&info='+ encodeURIComponent("【来点团】#"+title) + ' ' + encodeURIComponent(domain); window.open('http://t.163.com/article/user/checkLogin.do?'+url+'&'+new Date().getTime(),'newwindow','height=330,width=550,top='+(screen.height-280)/2+',left='+(screen.width-550)/2+', toolbar=no, menubar=no, scrollbars=no,resizable=yes,location=no, status=no'); return false;
+}else if(name == "qq"){ var url = 'http://v.t.qq.com/share/share.php?title='+encodeURIComponent("@来点团#"+title)+'&url='+domain+'&site='+domain;  window.open( url,'转播到腾讯微博', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' ); return false;
+}else if (name =='qqzone'){ window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(domain));return false;}}
+$(".djheader a").click(function(){var name = $(this).attr('name');share(name);})})

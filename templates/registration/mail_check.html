@@ -1,0 +1,678 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>来点团</title>
+	<meta name="keywords" content="来点团" />
+	<meta name="description" content="来点团" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="css/list.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="css/login.css" rel="stylesheet" type="text/css" />
+	<link href="css/mail_check.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="js/tlink.js" ></script>
+	<script language="javascript" type="text/javascript" src="js/changecity.js"></script>
+</head>
+
+<body>
+<div class="header_top">
+	<div class="w960 center">
+		<span class="login">
+			<a href="">注册</a> | <a href="">登录</a>
+		</span>
+
+		<div class="toplinks">
+			<a href="" class="rss">个人中心</a>
+			<span>
+				[<a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.laidiantuan.com');">设为首页</a>] 
+				[<a href="javascript:window.external.AddFavorite('http://www.laidiantuan.com','来点团')">加入收藏</a>]
+			</span>
+		</div>
+	</div>
+</div>
+<!-- // 网站顶部横栏 -->
+
+<div class="header">
+	<div class="top w960 center">
+		<div class="title">
+			<h1><a href="http://localhost/laidiantuan"><img src="images/logo.png" width="216" height="74" alt="来点团"/></a> </h1>
+		</div>
+		<div class="banner2">
+			<div class="show_city">北京</div>
+			<div class="c_city">
+				<a href="javascript:;" onClick="change_city()"></a>
+			</div>
+			<!--
+			<div style="margin-top:10px;float:left;">
+				<iframe src="http://m.weather.com.cn/m/pn7/weather.htm" width="195" height="20" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+			</div>
+			-->
+		</div>
+		<div class="banner">
+			<div id="head_right_top">
+				<form name="formsearch" action="">
+					<input type="text" name="text" maxlength="10" class="text" value="输入关键字，搜索团购或团购网" onfocus="if(this.value=='输入关键字，搜索团购或团购网'){this.value='';}" onblur="if(this.value==''){this.value='输入关键字，搜索团购或团购网';}" />
+					<button type="submit" class="search-submit">团购搜索</button>
+				</form>
+			</div>
+			<div class="tags">
+				<ul>
+					<li><a href='' target='_blank'>高朋</a> </li>
+					<li><a href='' target='_blank'>美团</a> </li>
+					<li><a href='' target='_blank'>拉手</a> </li>
+					<li><a href='' target='_blank'>QQ团</a></li>
+					<li><a href='' target='_blank'>F团</a></li>
+				</ul>
+			</div>
+			<!-- //	搜索 -->
+		</div>
+	</div>
+	<!-- // logo栏目 -->
+
+	<!-- // 导航 -->
+	<div class="module blue mT10 wrapper w963">
+		<div class="top">
+			<div class="t_l"></div>
+			<div class="t_r"></div>
+			<div id="navMenu">
+				<ul>
+					<li><a href='/laidiantuan'><span>今日团购</span></a></li>
+					<li><a href='/laidiantuan/gmaps/clusters.html'><span>团购地图</span></a></li>
+					<li><a href='/laidiantuan/url_list.html'><span>网站大全</span></a></li>
+					<li><a href='/laidiantuan/user.html'><span>个人中心</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<div class="choose" id="city_ul">
+	<ul class="iul">
+		<div class="hot">热门城市</div>
+		<div class="c">
+			<li><a href='http://localhost/laidiantuan/5003'>北京</a></li>
+			<li><a href='http://localhost/laidiantuan/7508'>上海</a></li>
+			<li><a href='http://localhost/laidiantuan/6019'>深圳</a></li>
+			<li><a href='http://localhost/laidiantuan/9011'>香港</a></li>
+			<li><a href='http://localhost/laidiantuan/16500'>澳门</a></li>
+		</div>
+		<div style="float:right">
+			<a href="javascript:void(0);" class="white" onClick="document.getElementById('city_ul').style.display='none';">关闭</a>
+		</div>
+	</ul>
+
+	<div style="margin-top:5px;margin-bottom:5px;float:left;">
+		<form name="formsearch" action="">
+			<input type="text" name="text" maxlength="10" class="text" value="输入城市名" onfocus="if(this.value=='输入城市名'){this.value='';}" onblur="if(this.value==''){this.value='输入城市名';}" />
+			<button type="submit" class="search-submit">团购搜索</button>
+		</form>
+	</div>		
+	
+	<div class="city_name">
+		<table style="width:80%">
+			<tr>
+				<td style="padding-top:4px;"><div class="nob">A</div></td>
+				<td>
+					<ul>
+						<li><a href='http://localhost/laidiantuan/5003'>鞍山</a></li>
+						<li><a href='http://localhost/laidiantuan/7508'>安阳</a></li>
+						<li><a href='http://localhost/laidiantuan/6019'>阿坝</a></li>
+						<li><a href='http://localhost/laidiantuan/9011'>阿拉善</a></li>
+						<li><a href='http://localhost/laidiantuan/13506'>阿里</a></li>
+						<li><a href='http://localhost/laidiantuan/6508'>安康</a></li>
+						<li><a href='http://localhost/laidiantuan/10508'>安庆</a></li>
+						<li><a href='http://localhost/laidiantuan/13004'>安顺</a></li>
+						<li><a href='http://localhost/laidiantuan/15507'>阿克苏</a></li>
+						<li><a href='http://localhost/laidiantuan/16500'>澳门</a></li>
+					</ul>
+				</td>
+			</tr>
+		
+		<tr>
+			<td style="padding-top:4px;"><div class="nob">B</div></td>
+			<td>
+				<ul>
+					<li><a href='http://localhost/laidiantuan/500'>北京</a></li>
+					<li><a href='http://localhost/laidiantuan/8006'>保定</a></li>
+					<li><a href='http://localhost/laidiantuan/9002'>包头</a></li>
+					<li><a href='http://localhost/laidiantuan/14003'>白银</a></li>
+					<li><a href='http://localhost/laidiantuan/11513'>百色</a></li>
+					<li><a href='http://localhost/laidiantuan/11505'>北海</a></li>
+					<li><a href='http://localhost/laidiantuan/13006'>毕节</a></li>
+	<li><a href='http://localhost/laidiantuan/12014'>白沙</a></li>
+	<li><a href='http://localhost/laidiantuan/12018'>保亭</a></li>
+	<li><a href='http://localhost/laidiantuan/10503'>蚌埠</a></li>
+	<li><a href='http://localhost/laidiantuan/9508'>白城</a></li>
+	<li><a href='http://localhost/laidiantuan/9506'>白山</a></li>
+	<li><a href='http://localhost/laidiantuan/5005'>本溪</a></li>
+	<li><a href='http://localhost/laidiantuan/9010'>巴彦淖尔盟</a></li>
+	<li><a href='http://localhost/laidiantuan/10515'>亳州</a></li>
+	<li><a href='http://localhost/laidiantuan/4516'>滨州</a></li>
+	<li><a href='http://localhost/laidiantuan/6502'>宝鸡</a></li>
+	<li><a href='http://localhost/laidiantuan/6015'>巴中</a></li>
+	<li><a href='http://localhost/laidiantuan/15510'>巴音郭楞</a></li>
+	<li><a href='http://localhost/laidiantuan/15512'>博尔塔拉</a></li>
+	<li><a href='http://localhost/laidiantuan/12504'>保山</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">C</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/6001'>成都</a></li>
+	<li><a href='http://localhost/laidiantuan/2000'>重庆</a></li>
+	<li><a href='http://localhost/laidiantuan/11001'>长沙</a></li>
+	<li><a href='http://localhost/laidiantuan/9501'>长春</a></li>
+	<li><a href='http://localhost/laidiantuan/11007'>常德</a></li>
+	<li><a href='http://localhost/laidiantuan/2519'>潮州</a></li>
+	<li><a href='http://localhost/laidiantuan/8009'>沧州</a></li>
+	<li><a href='http://localhost/laidiantuan/11010'>郴州</a></li>
+	<li><a href='http://localhost/laidiantuan/4011'>常州</a></li>
+	<li><a href='http://localhost/laidiantuan/12015'>昌江</a></li>
+	<li><a href='http://localhost/laidiantuan/8008'>承德</a></li>
+	<li><a href='http://localhost/laidiantuan/10517'>池州</a></li>
+	<li><a href='http://localhost/laidiantuan/10510'>滁州</a></li>
+	<li><a href='http://localhost/laidiantuan/5014'>朝阳</a></li>
+	<li><a href='http://localhost/laidiantuan/9004'>赤峰</a></li>
+	<li><a href='http://localhost/laidiantuan/8504'>长治</a></li>
+	<li><a href='http://localhost/laidiantuan/10513'>巢湖</a></li>
+	<li><a href='http://localhost/laidiantuan/13503'>昌都</a></li>
+	<li><a href='http://localhost/laidiantuan/15511'>昌吉</a></li>
+	<li><a href='http://localhost/laidiantuan/12512'>楚雄</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">D</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/5002'>大连</a></li>
+	<li><a href='http://localhost/laidiantuan/2510'>东莞</a></li>
+	<li><a href='http://localhost/laidiantuan/4513'>德州</a></li>
+	<li><a href='http://localhost/laidiantuan/4505'>东营</a></li>
+	<li><a href='http://localhost/laidiantuan/10006'>大庆</a></li>
+	<li><a href='http://localhost/laidiantuan/5006'>丹东</a></li>
+	<li><a href='http://localhost/laidiantuan/12011'>定安县</a></li>
+	<li><a href='http://localhost/laidiantuan/12009'>东方</a></li>
+	<li><a href='http://localhost/laidiantuan/10013'>大兴安岭</a></li>
+	<li><a href='http://localhost/laidiantuan/14007'>定西</a></li>
+	<li><a href='http://localhost/laidiantuan/8502'>大同</a></li>
+	<li><a href='http://localhost/laidiantuan/6014'>达州</a></li>
+	<li><a href='http://localhost/laidiantuan/6005'>德阳</a></li>
+	<li><a href='http://localhost/laidiantuan/12005'>儋州</a></li>
+	<li><a href='http://localhost/laidiantuan/12513'>大理</a></li>
+	<li><a href='http://localhost/laidiantuan/12514'>德宏</a></li>
+	<li><a href='http://localhost/laidiantuan/12516'>迪庆</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">E</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/7008'>鄂州</a></li>
+	<li><a href='http://localhost/laidiantuan/9006'>鄂尔多斯</a></li>
+	<li><a href='http://localhost/laidiantuan/7017'>恩施</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">F</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/3001'>福州</a></li>
+	<li><a href='http://localhost/laidiantuan/2513'>佛山</a></li>
+	<li><a href='http://localhost/laidiantuan/5004'>抚顺</a></li>
+	<li><a href='http://localhost/laidiantuan/11506'>防城港</a></li>
+	<li><a href='http://localhost/laidiantuan/10511'>阜阳</a></li>
+	<li><a href='http://localhost/laidiantuan/5510'>抚州</a></li>
+	<li><a href='http://localhost/laidiantuan/5011'>阜新</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">G</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/2501'>广州</a></li>
+	<li><a href='http://localhost/laidiantuan/14013'>甘南</a></li>
+	<li><a href='http://localhost/laidiantuan/13001'>贵阳</a></li>
+	<li><a href='http://localhost/laidiantuan/11503'>桂林</a></li>
+	<li><a href='http://localhost/laidiantuan/11508'>贵港</a></li>
+	<li><a href='http://localhost/laidiantuan/5507'>赣州</a></li>
+	<li><a href='http://localhost/laidiantuan/14504'>固原</a></li>
+	<li><a href='http://localhost/laidiantuan/15006'>果洛</a></li>
+	<li><a href='http://localhost/laidiantuan/6020'>甘孜</a></li>
+	<li><a href='http://localhost/laidiantuan/6013'>广安</a></li>
+	<li><a href='http://localhost/laidiantuan/6007'>广元</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">H</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/3501'>杭州</a></li>
+	<li><a href='http://localhost/laidiantuan/10501'>合肥</a></li>
+	<li><a href='http://localhost/laidiantuan/10001'>哈尔滨</a></li>
+	<li><a href='http://localhost/laidiantuan/8004'>邯郸</a></li>
+	<li><a href='http://localhost/laidiantuan/12001'>海口</a></li>
+	<li><a href='http://localhost/laidiantuan/2508'>惠州</a></li>
+	<li><a href='http://localhost/laidiantuan/2506'>河源</a></li>
+	<li><a href='http://localhost/laidiantuan/3505'>湖州</a></li>
+	<li><a href='http://localhost/laidiantuan/9001'>呼和浩特</a></li>
+	<li><a href='http://localhost/laidiantuan/11004'>衡阳</a></li>
+	<li><a href='http://localhost/laidiantuan/11514'>河池</a></li>
+	<li><a href='http://localhost/laidiantuan/11512'>贺州</a></li>
+	<li><a href='http://localhost/laidiantuan/8011'>衡水</a></li>
+	<li><a href='http://localhost/laidiantuan/10509'>黄山</a></li>
+	<li><a href='http://localhost/laidiantuan/7506'>鹤壁</a></li>
+	<li><a href='http://localhost/laidiantuan/10506'>淮北</a></li>
+	<li><a href='http://localhost/laidiantuan/10504'>淮南</a></li>
+	<li><a href='http://localhost/laidiantuan/10003'>鹤岗</a></li>
+	<li><a href='http://localhost/laidiantuan/10011'>黑河</a></li>
+	<li><a href='http://localhost/laidiantuan/7010'>黄冈</a></li>
+	<li><a href='http://localhost/laidiantuan/7002'>黄石</a></li>
+	<li><a href='http://localhost/laidiantuan/11012'>怀化</a></li>
+	<li><a href='http://localhost/laidiantuan/4004'>淮安</a></li>
+	<li><a href='http://localhost/laidiantuan/5008'>葫芦岛</a></li>
+	<li><a href='http://localhost/laidiantuan/9009'>呼伦贝尔</a></li>
+	<li><a href='http://localhost/laidiantuan/15003'>海北</a></li>
+	<li><a href='http://localhost/laidiantuan/15002'>海东</a></li>
+	<li><a href='http://localhost/laidiantuan/12000'>海南</a></li>
+	<li><a href='http://localhost/laidiantuan/15008'>海西</a></li>
+	<li><a href='http://localhost/laidiantuan/15004'>黄南</a></li>
+	<li><a href='http://localhost/laidiantuan/4517'>菏泽</a></li>
+	<li><a href='http://localhost/laidiantuan/6506'>汉中</a></li>
+	<li><a href='http://localhost/laidiantuan/15505'>哈密</a></li>
+	<li><a href='http://localhost/laidiantuan/15506'>和田</a></li>
+	<li><a href='http://localhost/laidiantuan/12510'>红河</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">J</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/4501'>济南</a></li>
+	<li><a href='http://localhost/laidiantuan/9502'>吉林</a></li>
+	<li><a href='http://localhost/laidiantuan/4509'>济宁</a></li>
+	<li><a href='http://localhost/laidiantuan/3504'>嘉兴</a></li>
+	<li><a href='http://localhost/laidiantuan/3507'>金华</a></li>
+	<li><a href='http://localhost/laidiantuan/2512'>江门</a></li>
+	<li><a href='http://localhost/laidiantuan/14005'>嘉峪关</a></li>
+	<li><a href='http://localhost/laidiantuan/14002'>金昌</a></li>
+	<li><a href='http://localhost/laidiantuan/14012'>酒泉</a></li>
+	<li><a href='http://localhost/laidiantuan/2520'>揭阳</a></li>
+	<li><a href='http://localhost/laidiantuan/7518'>济源</a></li>
+	<li><a href='http://localhost/laidiantuan/7505'>焦作</a></li>
+	<li><a href='http://localhost/laidiantuan/10005'>鸡西</a></li>
+	<li><a href='http://localhost/laidiantuan/10009'>佳木斯</a></li>
+	<li><a href='http://localhost/laidiantuan/7007'>荆门</a></li>
+	<li><a href='http://localhost/laidiantuan/7005'>荆州</a></li>
+	<li><a href='http://localhost/laidiantuan/5508'>吉安</a></li>
+	<li><a href='http://localhost/laidiantuan/5502'>景德镇</a></li>
+	<li><a href='http://localhost/laidiantuan/5505'>九江</a></li>
+	<li><a href='http://localhost/laidiantuan/5007'>锦州</a></li>
+	<li><a href='http://localhost/laidiantuan/8505'>晋城</a></li>
+	<li><a href='http://localhost/laidiantuan/8507'>晋中</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">K</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/12501'>昆明</a></li>
+	<li><a href='http://localhost/laidiantuan/7502'>开封</a></li>
+	<li><a href='http://localhost/laidiantuan/15508'>喀什</a></li>
+	<li><a href='http://localhost/laidiantuan/15502'>克拉玛依</a></li>
+	<li><a href='http://localhost/laidiantuan/15509'>克孜勒苏</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">L</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/14001'>兰州</a></li>
+	<li><a href='http://localhost/laidiantuan/7503'>洛阳</a></li>
+	<li><a href='http://localhost/laidiantuan/14014'>临夏</a></li>
+	<li><a href='http://localhost/laidiantuan/14010'>陇南</a></li>
+	<li><a href='http://localhost/laidiantuan/8010'>廊坊</a></li>
+	<li><a href='http://localhost/laidiantuan/4003'>连云港</a></li>
+	<li><a href='http://localhost/laidiantuan/13501'>拉萨</a></li>
+	<li><a href='http://localhost/laidiantuan/4515'>聊城</a></li>
+	<li><a href='http://localhost/laidiantuan/4514'>临沂</a></li>
+	<li><a href='http://localhost/laidiantuan/10514'>六安</a></li>
+	<li><a href='http://localhost/laidiantuan/11511'>柳州</a></li>
+	<li><a href='http://localhost/laidiantuan/13002'>六盘水</a></li>
+	<li><a href='http://localhost/laidiantuan/3008'>龙岩</a></li>
+	<li><a href='http://localhost/laidiantuan/12016'>乐东</a></li>
+	<li><a href='http://localhost/laidiantuan/12013'>临高县</a></li>
+	<li><a href='http://localhost/laidiantuan/12017'>陵水</a></li>
+	<li><a href='http://localhost/laidiantuan/7511'>漯河</a></li>
+	<li><a href='http://localhost/laidiantuan/11013'>娄底</a></li>
+	<li><a href='http://localhost/laidiantuan/9504'>辽源</a></li>
+	<li><a href='http://localhost/laidiantuan/5012'>辽阳</a></li>
+	<li><a href='http://localhost/laidiantuan/4512'>莱芜</a></li>
+	<li><a href='http://localhost/laidiantuan/8509'>临汾</a></li>
+	<li><a href='http://localhost/laidiantuan/8511'>吕梁</a></li>
+	<li><a href='http://localhost/laidiantuan/6010'>乐山</a></li>
+	<li><a href='http://localhost/laidiantuan/6021'>凉山</a></li>
+	<li><a href='http://localhost/laidiantuan/6004'>泸州</a></li>
+	<li><a href='http://localhost/laidiantuan/13507'>林芝</a></li>
+	<li><a href='http://localhost/laidiantuan/12508'>丽江</a></li>
+	<li><a href='http://localhost/laidiantuan/12507'>临沧</a></li>
+	<li><a href='http://localhost/laidiantuan/3511'>丽水</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">M</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/6006'>绵阳</a></li>
+	<li><a href='http://localhost/laidiantuan/2516'>茂名</a></li>
+	<li><a href='http://localhost/laidiantuan/10505'>马鞍山</a></li>
+	<li><a href='http://localhost/laidiantuan/2507'>梅州</a></li>
+	<li><a href='http://localhost/laidiantuan/10008'>牡丹江</a></li>
+	<li><a href='http://localhost/laidiantuan/6017'>眉山</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">N</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/4001'>南京</a></li>
+	<li><a href='http://localhost/laidiantuan/5501'>南昌</a></li>
+	<li><a href='http://localhost/laidiantuan/3502'>宁波</a></li>
+	<li><a href='http://localhost/laidiantuan/11510'>南宁</a></li>
+	<li><a href='http://localhost/laidiantuan/7513'>南阳</a></li>
+	<li><a href='http://localhost/laidiantuan/4009'>南通</a></li>
+	<li><a href='http://localhost/laidiantuan/3007'>南平</a></li>
+	<li><a href='http://localhost/laidiantuan/3009'>宁德</a></li>
+	<li><a href='http://localhost/laidiantuan/6011'>南充</a></li>
+	<li><a href='http://localhost/laidiantuan/6009'>内江</a></li>
+	<li><a href='http://localhost/laidiantuan/13502'>那曲</a></li>
+	<li><a href='http://localhost/laidiantuan/12515'>怒江</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">P</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/7504'>平顶山</a></li>
+	<li><a href='http://localhost/laidiantuan/3004'>莆田</a></li>
+	<li><a href='http://localhost/laidiantuan/7509'>濮阳</a></li>
+	<li><a href='http://localhost/laidiantuan/14008'>平凉</a></li>
+	<li><a href='http://localhost/laidiantuan/5503'>萍乡</a></li>
+	<li><a href='http://localhost/laidiantuan/5010'>盘锦</a></li>
+	<li><a href='http://localhost/laidiantuan/6003'>攀枝花</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">Q</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/4502'>青岛</a></li>
+	<li><a href='http://localhost/laidiantuan/8003'>秦皇岛</a></li>
+	<li><a href='http://localhost/laidiantuan/3005'>泉州</a></li>
+	<li><a href='http://localhost/laidiantuan/14009'>庆阳</a></li>
+	<li><a href='http://localhost/laidiantuan/10002'>齐齐哈尔</a></li>
+	<li><a href='http://localhost/laidiantuan/2518'>清远</a></li>
+	<li><a href='http://localhost/laidiantuan/11507'>钦州</a></li>
+	<li><a href='http://localhost/laidiantuan/13008'>黔东南</a></li>
+	<li><a href='http://localhost/laidiantuan/13009'>黔南</a></li>
+	<li><a href='http://localhost/laidiantuan/13007'>黔西南</a></li>
+	<li><a href='http://localhost/laidiantuan/12004'>琼海</a></li>
+	<li><a href='http://localhost/laidiantuan/12019'>琼中</a></li>
+	<li><a href='http://localhost/laidiantuan/10010'>七台河</a></li>
+	<li><a href='http://localhost/laidiantuan/7015'>潜江</a></li>
+	<li><a href='http://localhost/laidiantuan/12502'>曲靖</a></li>
+	<li><a href='http://localhost/laidiantuan/3508'>衢州</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">R</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/4511'>日照</a></li>
+	<li><a href='http://localhost/laidiantuan/13505'>日喀则</a></li>
+</ul>
+                        </td>
+ 
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">S</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/1000'>上海</a></li>
+	<li><a href='http://localhost/laidiantuan/2502'>深圳</a></li>
+	<li><a href='http://localhost/laidiantuan/5001'>沈阳</a></li>
+	<li><a href='http://localhost/laidiantuan/4013'>苏州</a></li>
+	<li><a href='http://localhost/laidiantuan/2504'>汕头</a></li>
+	<li><a href='http://localhost/laidiantuan/8001'>石家庄</a></li>
+	<li><a href='http://localhost/laidiantuan/2509'>汕尾</a></li>
+	<li><a href='http://localhost/laidiantuan/2505'>韶关</a></li>
+	<li><a href='http://localhost/laidiantuan/10512'>宿州</a></li>
+	<li><a href='http://localhost/laidiantuan/3506'>绍兴</a></li>
+	<li><a href='http://localhost/laidiantuan/12002'>三亚</a></li>
+	<li><a href='http://localhost/laidiantuan/7512'>三门峡</a></li>
+	<li><a href='http://localhost/laidiantuan/7514'>商丘</a></li>
+	<li><a href='http://localhost/laidiantuan/3003'>三明</a></li>
+	<li><a href='http://localhost/laidiantuan/10004'>双鸭山</a></li>
+	<li><a href='http://localhost/laidiantuan/10012'>绥化</a></li>
+	<li><a href='http://localhost/laidiantuan/7016'>神农架</a></li>
+	<li><a href='http://localhost/laidiantuan/7004'>十堰</a></li>
+	<li><a href='http://localhost/laidiantuan/7012'>随州</a></li>
+	<li><a href='http://localhost/laidiantuan/11005'>邵阳</a></li>
+	<li><a href='http://localhost/laidiantuan/9503'>四平</a></li>
+	<li><a href='http://localhost/laidiantuan/9507'>松原</a></li>
+	<li><a href='http://localhost/laidiantuan/4005'>宿迁</a></li>
+	<li><a href='http://localhost/laidiantuan/5511'>上饶</a></li>
+	<li><a href='http://localhost/laidiantuan/14502'>石嘴山</a></li>
+	<li><a href='http://localhost/laidiantuan/8506'>朔州</a></li>
+	<li><a href='http://localhost/laidiantuan/6509'>商洛</a></li>
+	<li><a href='http://localhost/laidiantuan/6008'>遂宁</a></li>
+	<li><a href='http://localhost/laidiantuan/13504'>山南</a></li>
+	<li><a href='http://localhost/laidiantuan/15503'>石河子</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">T</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/1500'>天津</a></li>
+	<li><a href='http://localhost/laidiantuan/8501'>太原</a></li>
+	<li><a href='http://localhost/laidiantuan/4510'>泰安</a></li>
+	<li><a href='http://localhost/laidiantuan/8002'>唐山</a></li>
+	<li><a href='http://localhost/laidiantuan/4008'>泰州</a></li>
+	<li><a href='http://localhost/laidiantuan/3510'>台州</a></li>
+	<li><a href='http://localhost/laidiantuan/10507'>铜陵</a></li>
+	<li><a href='http://localhost/laidiantuan/14004'>天水</a></li>
+	<li><a href='http://localhost/laidiantuan/13005'>铜仁</a></li>
+	<li><a href='http://localhost/laidiantuan/12012'>屯昌县</a></li>
+	<li><a href='http://localhost/laidiantuan/7014'>天门</a></li>
+	<li><a href='http://localhost/laidiantuan/9505'>通化</a></li>
+	<li><a href='http://localhost/laidiantuan/5013'>铁岭</a></li>
+	<li><a href='http://localhost/laidiantuan/9005'>通辽</a></li>
+	<li><a href='http://localhost/laidiantuan/6501'>铜川</a></li>
+	<li><a href='http://localhost/laidiantuan/15504'>吐鲁番</a></li>
+	<li><a href='http://localhost/laidiantuan/17000'>台湾</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">W</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/7001'>武汉</a></li>
+	<li><a href='http://localhost/laidiantuan/3503'>温州</a></li>
+	<li><a href='http://localhost/laidiantuan/4012'>无锡</a></li>
+	<li><a href='http://localhost/laidiantuan/15501'>乌鲁木齐</a></li>
+	<li><a href='http://localhost/laidiantuan/4508'>威海</a></li>
+	<li><a href='http://localhost/laidiantuan/4506'>潍坊</a></li>
+	<li><a href='http://localhost/laidiantuan/10502'>芜湖</a></li>
+	<li><a href='http://localhost/laidiantuan/12008'>万宁</a></li>
+	<li><a href='http://localhost/laidiantuan/12007'>文昌</a></li>
+	<li><a href='http://localhost/laidiantuan/12003'>五指山</a></li>
+	<li><a href='http://localhost/laidiantuan/14006'>武威</a></li>
+	<li><a href='http://localhost/laidiantuan/9003'>乌海</a></li>
+	<li><a href='http://localhost/laidiantuan/9007'>乌兰察布市</a></li>
+	<li><a href='http://localhost/laidiantuan/14503'>吴忠</a></li>
+	<li><a href='http://localhost/laidiantuan/11504'>梧州</a></li>
+	<li><a href='http://localhost/laidiantuan/6504'>渭南</a></li>
+	<li><a href='http://localhost/laidiantuan/12509'>文山</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">X</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/6510'>西安</a></li>
+	<li><a href='http://localhost/laidiantuan/3002'>厦门</a></li>
+	<li><a href='http://localhost/laidiantuan/15001'>西宁</a></li>
+	<li><a href='http://localhost/laidiantuan/7003'>襄樊</a></li>
+	<li><a href='http://localhost/laidiantuan/4002'>徐州</a></li>
+	<li><a href='http://localhost/laidiantuan/11003'>湘潭</a></li>
+	<li><a href='http://localhost/laidiantuan/7507'>新乡</a></li>
+	<li><a href='http://localhost/laidiantuan/8005'>邢台</a></li>
+	<li><a href='http://localhost/laidiantuan/7515'>信阳</a></li>
+	<li><a href='http://localhost/laidiantuan/7510'>许昌</a></li>
+	<li><a href='http://localhost/laidiantuan/7013'>仙桃</a></li>
+	<li><a href='http://localhost/laidiantuan/7011'>咸宁</a></li>
+	<li><a href='http://localhost/laidiantuan/7009'>孝感</a></li>
+	<li><a href='http://localhost/laidiantuan/10516'>宣城</a></li>
+	<li><a href='http://localhost/laidiantuan/11014'>湘西</a></li>
+	<li><a href='http://localhost/laidiantuan/5504'>新余</a></li>
+	<li><a href='http://localhost/laidiantuan/9008'>锡林郭勒盟</a></li>
+	<li><a href='http://localhost/laidiantuan/9012'>兴安盟</a></li>
+	<li><a href='http://localhost/laidiantuan/8508'>忻州</a></li>
+	<li><a href='http://localhost/laidiantuan/6503'>咸阳</a></li>
+	<li><a href='http://localhost/laidiantuan/12511'>西双版纳</a></li>
+	<li><a href='http://localhost/laidiantuan/16000'>香港</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">Y</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/6505'>延安</a></li>
+	<li><a href='http://localhost/laidiantuan/4507'>烟台</a></li>
+	<li><a href='http://localhost/laidiantuan/14501'>银川</a></li>
+	<li><a href='http://localhost/laidiantuan/4007'>扬州</a></li>
+	<li><a href='http://localhost/laidiantuan/9509'>延边</a></li>
+	<li><a href='http://localhost/laidiantuan/7006'>宜昌</a></li>
+	<li><a href='http://localhost/laidiantuan/4006'>盐城</a></li>
+	<li><a href='http://localhost/laidiantuan/11006'>岳阳</a></li>
+	<li><a href='http://localhost/laidiantuan/2514'>阳江</a></li>
+	<li><a href='http://localhost/laidiantuan/2521'>云浮</a></li>
+	<li><a href='http://localhost/laidiantuan/11509'>玉林</a></li>
+	<li><a href='http://localhost/laidiantuan/10007'>伊春</a></li>
+	<li><a href='http://localhost/laidiantuan/11009'>益阳</a></li>
+	<li><a href='http://localhost/laidiantuan/11011'>永州</a></li>
+	<li><a href='http://localhost/laidiantuan/5509'>宜春</a></li>
+	<li><a href='http://localhost/laidiantuan/5506'>鹰潭</a></li>
+	<li><a href='http://localhost/laidiantuan/5009'>营口</a></li>
+	<li><a href='http://localhost/laidiantuan/15007'>玉树</a></li>
+	<li><a href='http://localhost/laidiantuan/8503'>阳泉</a></li>
+	<li><a href='http://localhost/laidiantuan/8510'>运城</a></li>
+	<li><a href='http://localhost/laidiantuan/6507'>榆林</a></li>
+	<li><a href='http://localhost/laidiantuan/6016'>雅安</a></li>
+	<li><a href='http://localhost/laidiantuan/6012'>宜宾</a></li>
+	<li><a href='http://localhost/laidiantuan/15513'>伊犁</a></li>
+	<li><a href='http://localhost/laidiantuan/12503'>玉溪</a></li>
+</ul>
+                        </td>
+                      </tr><tr>
+                        <td style="padding-top:4px;"><div class="nob">Z</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/7501'>郑州</a></li>
+	<li><a href='http://localhost/laidiantuan/2503'>珠海</a></li>
+	<li><a href='http://localhost/laidiantuan/8007'>张家口</a></li>
+	<li><a href='http://localhost/laidiantuan/2511'>中山</a></li>
+	<li><a href='http://localhost/laidiantuan/2515'>湛江</a></li>
+	<li><a href='http://localhost/laidiantuan/2517'>肇庆</a></li>
+	<li><a href='http://localhost/laidiantuan/13003'>遵义</a></li>
+	<li><a href='http://localhost/laidiantuan/4503'>淄博</a></li>
+	<li><a href='http://localhost/laidiantuan/3006'>漳州</a></li>
+	<li><a href='http://localhost/laidiantuan/7516'>周口</a></li>
+	<li><a href='http://localhost/laidiantuan/7517'>驻马店</a></li>
+	<li><a href='http://localhost/laidiantuan/14011'>张掖</a></li>
+	<li><a href='http://localhost/laidiantuan/11008'>张家界</a></li>
+	<li><a href='http://localhost/laidiantuan/4010'>镇江</a></li>
+	<li><a href='http://localhost/laidiantuan/4504'>枣庄</a></li>
+	<li><a href='http://localhost/laidiantuan/6018'>资阳</a></li>
+	<li><a href='http://localhost/laidiantuan/6002'>自贡</a></li>
+	<li><a href='http://localhost/laidiantuan/12505'>昭通</a></li>
+	<li><a href='http://localhost/laidiantuan/3509'>舟山</a></li>
+		  </ul>
+		  </td>
+                      </tr>                  
+					  <tr>
+                        <td style="padding-top:4px;"><div class="nob">省</div></td>
+                        <td>
+<ul>
+	<li><a href='http://localhost/laidiantuan/10000'>黑龙江</a></li>
+	<li><a href='http://localhost/laidiantuan/8000'>辽宁</a></li>
+	<li><a href='http://localhost/laidiantuan/5003'>河北</a></li>
+	<li><a href='http://localhost/laidiantuan/8500'>山西</a></li>
+	<li><a href='http://localhost/laidiantuan/4500'>山东</a></li>
+	<li><a href='http://localhost/laidiantuan/7500'>河南</a></li>
+	<li><a href='http://localhost/laidiantuan/4000'>江苏</a></li>
+	<li><a href='http://localhost/laidiantuan/10500'>安徽</a></li>
+	<li><a href='http://localhost/laidiantuan/3500'>浙江</a></li>
+	<li><a href='http://localhost/laidiantuan/3000'>福建</a></li>
+	<li><a href='http://localhost/laidiantuan/5500'>江西</a></li>
+	<li><a href='http://localhost/laidiantuan/11000'>湖南</a></li>
+	<li><a href='http://localhost/laidiantuan/7000'>湖北</a></li>
+	<li><a href='http://localhost/laidiantuan/2500'>广东</a></li>
+	<li><a href='http://localhost/laidiantuan/12000'>海南</a></li>
+	<li><a href='http://localhost/laidiantuan/14000'>甘肃</a></li>
+	<li><a href='http://localhost/laidiantuan/6500'>陕西</a></li>
+	<li><a href='http://localhost/laidiantuan/6000'>四川</a></li>
+	<li><a href='http://localhost/laidiantuan/13000'>贵州</a></li>
+	<li><a href='http://localhost/laidiantuan/12500'>云南</a></li>
+	<li><a href='http://localhost/laidiantuan/11500'>广西</a></li>
+	<li><a href='http://localhost/laidiantuan/14500'>宁夏</a></li>
+	<li><a href='http://localhost/laidiantuan/13500'>西藏</a></li>
+	<li><a href='http://localhost/laidiantuan/15500'>新疆</a></li>
+	<li><a href='http://localhost/laidiantuan/9000'>内蒙古</a></li>
+		  </ul>
+		  </td>
+                      </tr>                  </table>
+	</div>
+</div>
+<!--选择城市结束-->
+</div>
+<!-- //header -->
+
+<div class="w960 center clear mt1">
+	<!-- 成功的样式 -->
+	<div class="check_pass">
+		<div class="check_img">    		
+			<div class="check_about">
+                <h3>您已通过来点团邮箱认证！</h3>
+				<ul>
+					<li>您现在可以使用发表评论，分享团购。</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 失败提示重新验证的样式 -->
+	<div class="check_overdue">
+		<div class="check_img">    		
+			<div class="check_about">
+                <h3>您的来点团邮箱认证链接已过期！</h3>
+				<ul>
+					<li>请重新进行邮箱验证操作。</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- //底部模板 -->
+<div class="footer w960 center mt1 clear">
+		<p class="powered">    
+			Powered by <a href="http://www.laidiantuan.com" title="来点团" target="_blank"><strong>laidiantuan</strong></a> &copy; 2011 <a href="http://www.laidiantuan.com/" target="_blank">e-twon</a> Inc.<br />
+			<div class="copyright">Copyright &copy; 2011 来点团 版权所有&nbsp;&nbsp;</div>
+		</p>        
+		<!-- /powered -->
+</div>
+<!-- /footer -->
+</body>
+</html>

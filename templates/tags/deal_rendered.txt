@@ -1,0 +1,7 @@
+{% load safe_filters %}<dl class="tuan_box">{% if object.start_date.date == today %}<div class="t_l"></div>{% endif %}<div class="djs"></div><span class="sjss settime" endtime="{{ object.end_date|date:'m d, Y H:i:s'}}"></span><div class="tuan_box_img"><a href="{% url show_detail object.pk %}" target="_blank"  title="{{ object.title }}"><img src="{% if object.image %}{{ object.image.url }}{% endif %}" title="{{ object.title }}" /></a></div>
+<div class="tp"><span><a href="{% url show_detail object.pk %}" target="_blank"  name="{{ object.pk }}">[{{ object.website.name }}]</a></span><a name="{{ object.pk }}" title="{{ object.title }}" href="{% url show_detail object.pk %}" target="_blank" name="{{ object.pk }}">{{ object.title|safe_slice:":35"}}</a></div>
+<div class="t_price">
+<div class="ditu"><a href="{% url show_city object.division.all.0.slug %}" target="_blank">{{ object.division.all.0.name }}</a></div>
+<div class="goumai"><a href="{% url  stats_jump object.pk %}" title="{{ object.title }}" target='_blank' name="{{ object.pk }}"></a></div>
+团购价:￥<ins class="ins">{{ object.price }}</ins><br />折扣:<span>{{ object.discount }}折</span><br/>原价:￥<del class="del">{{ object.origin_price }}</del><br/> 已售:{{ object.bought }}人<br/>
+</div><b class="r3"></b><b class="r4"></b></dl>

@@ -1,0 +1,18 @@
+{% load safe_filters %}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta content ="团购,团购网,团购网站大全,团购导航,团购网站,团购网大全,团购网站导航,团购大全" name="keywords" /><meta content ="最好的中国团购网站大全,美团,糯米等每日团购网的团购网站导航!汇集北京团购网,上海团购网,和包括广州,深圳,南京,杭州,成都,青岛,西安等的团购网站大全和团购导航" name="description" />
+<title>来点团-团购网|团购网站大全,最大的团购导航,北京团购网站大全,尽在来点团团购网!</title><link REL="SHORTCUT ICON" HREF="/static/favicon.ico">
+<style type="text/css">
+body{font:12px arial;overflow:scroll;overflow-x:hidden;overflow-y:hidden;}
+.push_box{float:left;width:268px;height:124px;line-height:1.5em;}
+.push_box img{float:left; width:165px; height:121px; border:#dadada 1px solid;}
+.push_box .jgzk{float:right; width:80px; height:120px;margin-right:10px; overflow:hidden;} 
+a{color:#217ab6; text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="push_box">{% if deal.image %}<a target="_blank" href="http://{{ domain_name }}{% url show_detail deal.pk %}"><img src="http://{{ domain_name }}{{ deal.image.url }}"></a>{% endif %}
+<div class="jgzk">
+<table style="font:12px arial;"><tr><td style="font-size:17px;color:#ff0000;font-weight:bold;">￥{{ deal.price|int_type }}</td></tr><tr><td style="color:#217ab6;font-weight:bold;">{{ deal.discount }}折</td></tr><tr><td><a target="_blank" href="javascript:void(0);">【{{ deal.website.name }}】</a><a target="_blank" href="http://{{ domain_name }}{% url show_detail deal.pk %}">{{ deal.title|safe_slice:":55" }} </a></td></tr></table></div></div></div></body></html>

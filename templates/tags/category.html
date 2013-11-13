@@ -1,0 +1,1 @@
+<div class="itgfl"><div class="t_head_l"><a href="{% url show_category city.slug category.slug %}">{{ category.title }}</a></div><div class="t_head_r">{% for child in childs %}<a href="{% url show_category city.slug child.slug %}">{{ child.title }}</a>{% if not forloop.last %} |{% endif %}{% endfor %}</div></div>

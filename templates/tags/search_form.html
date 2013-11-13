@@ -1,0 +1,6 @@
+<div class="banner">
+    <div id="head_right_top">
+        <div id="local"><form action="{% url haystack_search %}" method="get">{% csrf_token %}<input type="text" class="text" maxlength="66" name="q" id="serch_text" value="输入关键字，搜索团购或团购网" onfocus="if(this.value=='输入关键字，搜索团购或团购网'){this.value='';}" onblur="if(this.value==''){this.value='输入关键字，搜索团购或团购网';}" /><input type="submit" class="search-submit" value="团购搜索" /></form></div>
+        <div class="search_choice tuan_web"><ul class="local_hot"><li><a target="_blank" title='旅游' href="{% url  haystack_search %}?q={{ '旅游'|urlencode }}">旅游</a></li><li><a target="_blank" title="自助餐" href="{% url haystack_search %}?q={{ '自助餐'|urlencode }}">自助餐</a></li><li><a target="_blank"  title="鞋" href="{% url haystack_search %}?q={{ '鞋'|urlencode }}">鞋</a></li><li><a target="_bblank" title="电影" href="{% url haystack_search %}?q={{ '电影'|urlencode }}">电影</a></li><li><a target="_blank" title="KTV" href="{% url haystack_search %}?q=KTV">KTV</a></li><li><a target="_blank"  title="美发" href="{% url haystack_search %}?q={{ '美发'|urlencode }}">美发</a></li><li><a target="_blank" title="化妆品" href="{% url haystack_search %}?q={{ '化妆品'|urlencode }}">化妆品</a></li><li><a  target="_blank" title="摄影" href="{% url haystack_search %}?q={{ '摄影'|urlencode }}">摄影</a></li></ul></div>
+    </div>
+</div>

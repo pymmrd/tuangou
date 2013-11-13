@@ -1,0 +1,1 @@
+<span class="login">{% if request.user.is_authenticated %}<strong>欢迎您, {{ nickname }} !</strong> | <a href="javascript:void(0);" id="logout">退出 </a>{% else %}<a href="{% url signup %}">免费注册</a> | <a href="{% url signin %}">登录</a>{% endif %}</span>

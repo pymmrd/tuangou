@@ -1,0 +1,54 @@
+.category_main{float:left;border:#dadada 0px solid;height:auto;padding:10px;}
+.tuan_box_mid {width:100%;height:auto;margin-bottom:7px;overflow:hidden;clear:both;padding-bottom:5px;}
+.iituan{width:234px;height:258px;float:left;margin-top:12px;margin-left:12px;display:inline;}
+.tuan_box, .tuan_box_hover{width:221px;padding:6px;*padding:4px;}
+.tuan_box {position:relative;z-index:100;border:1px solid #dcdcdc;display:block;}
+.tuan_box_hover {position:absolute;z-index:999;background:#FFF;border:1px solid #fba96b;-moz-box-shadow:0 0 3px #fe740b;-webkit-box-shadow:0 0 3px #fe740b;box-shadow:0 0 3px #fe740b;}
+.tuan_box .bom{display:none;}
+.tuan_box_hover  .bom{height:16px;overflow:hidden;border-top:#dadada 1px dotted;padding:10px 5px 5px 5px;}
+.golook{height:20px;line-height:20px;padding:5px;}
+.golook  .add{float:left;}
+.golook  .add a{color:#999;}
+.golook  .add a:hover{text-decoration:none;}
+.golook .glook a{display:inline-block;width:61px;height:22px;background:url("http://static.laidiantuan.com/static/images/glook.jpg");}
+.golook .glook a:hover{background:url("http://static.laidiantuan.com/static/images/glookh.jpg");}
+.golook .glook{float:right;}
+.bom .pl_l{float:left;margin-right:10px;}
+.bom .pl_r{float:right;}
+.show_box{position:absolute;color:#666;width:248px;height:30px;line-height:30px;border:1px solid #F4E4B4;z-index:10010;margin-left:-10px;margin-top:-42px;padding:0 20px;background-color:#FFF4D8;box-shadow:4px 4px #E5E5E5; display:none}
+.show_box p{margin-top:8px;padding-left:20px;height:16px;line-height:16px;background:url("http://static.laidiantuan.com/static/images/safe-tips.gif") no-repeat;}
+.bom .tixin_a{background: url("http://static.laidiantuan.com/static/images/u.gif") repeat scroll 0 0 transparent;
+height: 10px;position:absolute;width: 17px;z-index:10010;margin-left:-66px;margin-top:-12px;}
+.tuan_box_hover b.r1, .tuan_box_hover b.r2, .tuan_box_hover b.r3, .tuan_box_hover b.r4{display:none;}
+b.r1, b.r2, b.r3, b.r4 {background:#FFF;display:block;height:1px;line-height:0;overflow:hidden;position:absolute;width:1px;z-index:100;}
+b.r1 {left:-1px;top:-1px;}
+b.r2 {right:-1px;top:-1px;}
+b.r3 {bottom: -1px;left: -1px;}
+b.r4 {bottom: -1px;right: -1px;}
+.tuan_box .t_l, .tuan_box_hover .t_l {width:56px;height:57px;float:left;position:absolute;margin-top:-6px;margin-left:-6px;*margin-top:0px;overflow:hidden;background:url("http://static.laidiantuan.com/static/images/new.gif") no-repeat;}
+.tuan_box .tp, .tuan_box_hover .tp{width:215px;height:40px;margin-top:6px;margin-left:4px;color:#434343;line-height:1.6em;overflow:hidden;}
+.tuan_box .tp span, .tuan_box_hover .tp span{font-weight:bold;}
+.tuan_box .tp a, .tuan_box_hover .tp a {color:#434343;text-decoration:none;}
+.tuan_box .tp a:hover, .tuan_box_hover .tp a:hover {color:#ff7300;}
+.tuan_box_img {width:220px;height:140px;font-size:0;}
+.tuan_box_img a:hover img{border:0px solid #ff6600;}
+.tuan_box_img a img {width:220px;height:140px;}
+.t_price{position:relative;width:215px;height:20px;color:#5f5f5f;font-size:12px;margin-left:4px;margin-top:8px;line-height:1.5em;}
+.t_price .ditu a{position:absolute;width:68px;height:22px;float:left;color:#626262;font-weight:bold;margin-top:5px;margin-left:150px;_margin-top:-5px;}
+.t_price .ditu a:hover{text-decoration:none;color:#626262;}
+.t_price .goumai a{position:absolute;float:left;width:106px;height:42px;margin-top:25px;margin-left:110px;background:url("http://static.laidiantuan.com/static/images/kk.gif") no-repeat;}
+.t_price .goumai a:hover{background:url("http://static.laidiantuan.com/static/images/kk-h.gif") no-repeat;}
+.t_price .del{font-size:12px;}
+.t_price p{float:right;}
+.t_price span{color:#e00001;}
+.t_price .ins{text-decoration:none;color:#e00001;font-size:18px;float:left;}
+.tuan_box_time {margin-top:10px;width:100px;height:23px;color:#009900;margin-left:6px;font-size:13px;}
+.tuan_box .djs,.tuan_box .sjss{display:none;}
+.tuan_box_hover .djs{width:220px;height:20px;background:#535353;float:left;margin-top:120px;*margin-top:126px;position:absolute;-moz-opacity:0.55;opacity:0.55;filter :alpha(opacity=55);}
+.tuan_box_hover .sjss{width:220px;float:left;color:#fff;margin-top:123px;*margin-top:129px;position:absolute;text-align:center;}
+.tuan_box_h{width:100%;height:auto;padding:10px 0px;margin-bottom:12px;overflow:hidden;}
+.index_more {text-align: center;height:26px;}
+.index_more a{font-size:18px;color:#333;}
+.index_moreons {background:#FFFCD2;border:1px solid #EFEFEF;height:25px;margin-left:18px;overflow: hidden;text-align:center;width:95%;}
+.index_moreons a{height:25px;line-height:25px;color:#0066CC;margin-right:10px;vertical-align:middle;}
+.index_moreons .close {font-weight:bold;}

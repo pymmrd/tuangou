@@ -1,0 +1,6 @@
+{% for item in miniitems %}
+<div class="l_box">
+    <div class="box"><a href="{{ item.url }}" target="_blank"><img src="{{ item.image_url }}"></a></div>
+    <p><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></p>
+</div>
+{% endfor %}

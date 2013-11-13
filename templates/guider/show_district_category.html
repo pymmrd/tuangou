@@ -1,0 +1,7 @@
+{% extends "base_site.html" %}{% load guider_tags %}{% load paginate %}
+{% block top_tab %}{% endblock %}
+{% block title %}{{ title }} {% endblock %}
+{% block keywords %}{{ meta_keywords }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+{% block content %} {% district slug cat_slug dist_slug %}{% top_categories slug cat_slug dist_slug parent %}{% include "tags/price_tag.html" %}
+<div class="tuan"><div class="tuan_box_mid">{% for object in result_list %}{% include "tags/deal_tag.html" %}{% endfor %}</div></div><div class="page-list">{% smart_paginator request page paginator %}</div>{% endblock %}

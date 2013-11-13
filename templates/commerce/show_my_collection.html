@@ -1,0 +1,73 @@
+{% load paginate %}{% load commerce_filters %}{% load commerce_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content ="团购,团购网,团购网站大全,团购导航,团购网站,团购网大全,团购网站导航,团购大全" name="keywords" />
+<meta content ="最好的中国团购网站大全,美团,糯米等每日团购网的团购网站导航!汇集北京团购网,上海团购网,和包括广州,深圳,南京,杭州,成都,青岛,西安等的团购网站大全
+和团购导航" name="description" />
+<title>{{ category.title }}</title>
+<link media="screen" type="text/css" rel="stylesheet" href="{{ MEDIA_URL}}css/app.css?1223">
+<!--[if IE 6]>       
+<style>
+#play{margin-left:0px;}
+#play .ddd i{background:url("") repeat scroll 0 0 transparent;left:0;top:0;cursor:pointer;height:70px;width:70px;position:absolute;}
+</style>
+<![endif]-->
+</head>
+<body>
+<div class="content center">
+  <div class="title">
+    <span class="mt_l">{{ category.title }}</span>
+    <span class="mt_r"><a class="close" href="http://ldt.close" target="_blank"></a></span>
+  </div>
+  <div class="nv">
+    <div class="nv_on">
+        <span  {% if not flag %}class="on"{% endif %}><a class='toggle' name='collection' href="javascript:void(0);">我的{{ category.name }}</a></span>
+        <span {% if flag %}class="on"{% endif %}><a class="toggle"  name='recommand' href="javascript:void(0);">推荐{{ category.name }}</a></span>
+    </div>
+    
+    <div class="tuan_ms">
+        <div id="collection" {% if flag %}style='display:none'{% endif %}>
+            <ul id="play">
+                {% for object in collection_list %}
+                <li>
+                    <p class="ddd">
+                        <a target="_blank" href="http://ldtapp.({{ vcode }}{{ object.pk|printf }})({{ object.title|urlencode }})({{ object.width }})({{ object.height }})({{ domain_name }}{% url show_app object.pk %})" title="{{ object.title }}">
+                            <img src="{{ MEDIA_URL }}{{ object.image }}" />
+                        </a>
+                        <a target="_blank" href="http://ldtapp.({{ vcode }}{{ object.pk|printf }})({{ object.title|urlencode }})({{ object.width }})({{ object.height }})({{ domain_name }}{% url show_app object.pk %})" title="{{ object.title }}">
+                            <i title="{{ object.title }}"></i>
+                        </a>
+                    </p>
+                    <a class="aaa" target="_blank" href="http://ldtapp.({{ vcode }}{{ object.pk|printf }})({{ object.title|urlencode }})({{ object.width }})({{ object.height }})({{ domain_name }}{% url show_app object.pk %})" title="{{ object.title }}">{{ object.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="recommand" {% if not flag %}style='display:none'{% endif %}>
+            <ul id="play">
+                {% for object in recommand_list %}
+                <li name="{% position forloop.counter page %}">
+                    <p class="ddd">
+                        <a target="_blank" href="http://ldtapp.({{ vcode }}{{ object.pk|printf }})({{ object.title|urlencode }})({{ object.width }})({{ object.height }})({{ domain_name }}{% url show_app object.pk %})" title="{{ object.title }}">
+                            <img src="{{ MEDIA_URL }}{{ object.image }}" />
+                        </a>
+                        <a target="_blank" href="http://ldtapp.({{ vcode }}{{ object.pk|printf }})({{ object.title|urlencode }})({{ object.width }})({{ object.height }})({{ domain_name }}{% url show_app object.pk %})" title="{{ object.title }}">
+                            <i title="{{ object.title }}"></i>
+                        </a>
+                    </p>
+                    <a class="aaa" target="_blank" href="http://ldtapp.({{ vcode }}{{ object.pk|printf }})({{ object.title|urlencode }})({{ object.width }})({{ object.height }})({{ domain_name }}{% url show_app object.pk %})" title="{{ object.title }}">{{ object.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="page-list"> {% more_paginator request paginator 0 1 %}</div>
+        </div>
+    </div>
+  </div>
+</div>
+  <input type="hidden" name='vcode' id="vcode" value="{{ vcode }}" />
+  <script src="{{ MEDIA_URL }}js/jquery-1.6.2.min.js" type="text/javascript"></script>
+  <script src="{{ MEDIA_URL }}js/app.js?1" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+.sp{width:750px;border:#DADADA 1px solid;float:left;margin-bottom:8px;}
+.sp .tgsj{width:710px;margin-top:20px;margin-bottom:10px;margin-left:20px;font-size:20px;}
+.sp .tgsj span{color:#fe740b;}
+.sp .tgsj span a{color:#fe740b;}
+.sp .tgsj a{color:#535353;}
+.sp .tgp{width:280px;height:270px;background:#f7f7f7;float:left;margin-left:20px;margin-top:10px;}
+.sp .tgp span{width:270px;float:left;margin-bottom:15px;}
+.sp h1{float:left;margin-top:20px;margin-left:20px;}
+.sp .tgp span .goumai{float:left;margin-top:5px;}
+.sp .tgp span .goumai a{width:258px;height:74px;float:left;color:#fff;font-size:14px;text-decoration: none;margin-top:5px;margin-left:3px;background:url("http://static.laidiantuan.com/static/images/lkk.jpg") no-repeat;}
+.sp .tgp span .goumai a:hover{background:url("http://static.laidiantuan.com/static/images/lkk.jpg") no-repeat;}
+.sp .tgp .jiage{width:210px;height:50px;margin-left:35px;margin-bottom:10px;border:#fcc65d 1px solid;background:#fef4cb;overflow:hidden;}
+.ljg{float:left;margin-left:10px;}
+.ljg li{width:65px;float:left;font-size:14px;font-weight:bold;color:#535353;text-align:center;line-height:14px;padding:8px 0px 0px;}
+.ljgs{float:left;margin-left:10px;}
+.ljgs li{width:65px;float:left;font-size:14px;font-weight:bold;color:#ff0000;text-align:center;line-height:14px;padding:8px 0px 0px;}
+.ljgs li del{color:#929292;}
+.sp .tgp .ctrs{width:210px;height:25px;margin-left:35px;margin-bottom:10px;border:#fcc65d 1px solid;background:#fef4cb;overflow:hidden;}
+.sp .tgp .ctrs a{color:#ff0000;}
+.sp .tgp .tgjs{width:210px;height:50px;margin-left:35px;margin-bottom:10px;border:#fcc65d 1px solid;background:#fef4cb;overflow:hidden;}
+.sp .tgp .ctrs p{float:left;color:#666;margin-top:5px;margin-left:20px;}
+.sp .tgp .tgjs p{float:left;color:#666;line-height:1.8em;margin-top:5px;margin-left:20px;}
+.sp .tgk{width:400px;height:345px;float:right;}
+.sp .tgk span{width:380px;float:left;margin-bottom:10px;}
+.sp .tgk img{width:330px;height:220px;float:left;}
+.sp .tgk span input[type="text"]{width:268px;height:25px;*height:20px;border:1px solid #dadada;padding-left:5px;*padding-top:5px;color:#939393;}
+.sp .tgk span input[type="text"]:focus{border-color:#fba96b;color:#333;-moz-box-shadow:0 0 3px #fba96b;-webkit-box-shadow:0 0 3px #fba96b;box-shadow:0 0 3px #fba96b;outline:none ;}
+.sp .tgk span input[type="submit"]{width:60px;height:27px;border:none;border-right:1px solid #ACACAC;border-bottom:1px solid #ACACAC;font-size:14px;color:#535353;padding:2px;padding-right:5px;padding-left:5px;background:#fef4cb;cursor:pointer;}
+.yhxz {float:left;width:750px;line-height:25px;color:#525252;border:#dadada 1px solid;margin-bottom:9px;background:url(http://static.laidiantuan.com/static/images/green_skin1.png) 0 -294px repeat-x;}
+.yhxz h2 {float:left;margin-left:10px;width:80px;font-size:12px;font-weight:bold;color:#fe740b;}
+.yhxz dd{float:left;width:730px;clear:both;border-top:1px #dadada solid;padding:5px 10px;overflow:hidden;}
+.yhxz ol{margin-left:20px;}
+.doyoulike {float:left;width:750px;line-height:25px;color:#525252;border:#dadada 1px solid;margin-bottom:9px;background:url(http://static.laidiantuan.com/static/images/green_skin1.png) 0 -294px repeat-x;}
+.doyoulike h2 {float:left;margin-left:10px;width:130px;color:#fe740b;font-weight:bold;font-size:12px;}
+.doyoulike dd{float:left;width:742px;clear:both;border-top:1px #dadada solid;padding:8px 0px 8px 8px;overflow:hidden;}
+.doyoulike .tjsc{float:left;width:175px;height:118px;border:#dadada 1px solid;margin-right:8px;line-height:1.5em;overflow:hidden;}
+.doyoulike .tjsc img{float:left;width:98px;height:62px;border:#dadada 1px solid;margin:5px 5px;}
+.doyoulike .tjsc .jgzk{float:left;width:60px;height:62px;margin-top:5px;}
+.doyoulike .tjsc .jgzk ins{text-decoration:none;color:#ff0000;font-size:16px;}
+.doyoulike .tjsc .tgxx{float:left;width:165px;height:50px;margin-left:5px;}
+.doyoulike .tjsc .tgxx a{color:#535353;}
+.hf {width:750px;height:auto;border:1px solid #DADADA;float:left;margin-bottom:8px;padding-bottom:8px;}
+.idl{height:28px;background:url(http://static.laidiantuan.com/static/images/green_skin1.png) 0 -185px repeat-x;border-bottom:#dadada 1px solid;}
+.idl strong{float:left;font-size:12px;color:#fe740b;margin-top:6px;margin-left:10px}
+.hf .tb{width:730px;height:225px;border:#dadada 1px solid;float:left;margin-top:8px;margin-left:8px;}
+.hf .tx{width:168px;height:223px;border:#fff 1px solid;float:left;background:#f1f1f1;}
+.hf .tx dt{height:32px;border-bottom:1px #dadada solid;}
+.hf .tx dt strong{float:left;color:#535353;margin-top:8px;margin-left:10px;}
+.hf .tx dd{height:160px;}
+.hf .tx dd img{float:left;margin-top:10px;margin-left:17px;border:5px solid #fff;}
+.hf .tx span{width:100px;float:left;margin-top:5px;margin-left:20px;}
+.hf .tx span a{color:#535353;}
+.hf .tx span a:hover{color:#fe740b;}
+.hf .nr{width:559px;height:225px;border-left:#dadada 1px solid;float:right;}
+.hf .nr dt{width:537px;height:33px;margin-left:10px;border-bottom:1px #dadada dotted;}
+.hf .nr .fabiao{float:left;color:#737373;margin-top:10px;margin-left:5px;}
+.hf .nr .tfloor{float:right;color:#49a0dd;font-weight:bold;margin-top:10px;margin-right:5px;}
+.hf .nr dd{height:160px;border-bottom:1px #dadada solid;}
+.hf .nr p{float:left;width:525px;height:140px;color:#535353;margin-top:10px;margin-left:15px;word-wrap:break-word;}
+.hf .nr .huifu{float:left;margin-top:8px;margin-left:5px;margin-right:10px;display:inline;}
+.hf .nr .fanhui{float:right;margin-top:8px;margin-right:5px;display:inline;}
+.hf .nr a{color:#737373;}
+.hf .nr a:hover{color:#fe740b;}
+.ihf {width:750px;height:272px;border:#DADADA 1px solid;float:left;margin-bottom:8px;}
+.ihf .tb{width:730px;height:225px;border:#dadada 1px solid;margin:8px;}
+.ihf .tx{width:168px;height:223px;border:#fff 1px solid;float:left;background:#f1f1f1;}
+.ihf .tx dt{height:32px;border-bottom:1px #dadada solid;}
+.ihf .tx dt strong{float:left;color:#535353;margin-top:8px;margin-left:10px;}
+.ihf .tx dd{height:160px;}
+.ihf .tx dd img{float:left;margin-top:20px;margin-left:17px;border:5px solid #fff;}
+.ihf .tx span{width:100px;float:left;margin-top:5px;margin-left:20px;}
+.ihf .tx span a{color:#535353;}
+.ihf .tx span a:hover{color:#fe740b;}
+.ihf .nr{width:559px;height:225px;border-left:#dadada 1px solid;float:right;}
+.ihf .nr dt{width:559px;height:32px;background:#f1f1f1;border-top:1px #fff solid;border-bottom:1px #dadada solid;}
+.ihf .nr li{float:left;font-weight:bold;margin-top:9px;margin-left:15px;}
+.ihf .nr a{color:#737373;}
+.ihf .nr a:hover{color:#fe740b;}
+.ihf .nr dd{height:190px;}
+.ihf .nr span{float:left;height:180px;color:#535353;margin-top:10px;margin-left:10px;}
+.ihf .nr span textarea{float:left;width:535px;height:170px;border:none;border:0px solid none;overflow-y:hidden;}
+.ihf .nr input{float:right;width:80px;height:28px;background-color:#fe740b;color:#fff;border-right:1px solid #acacac;border-bottom:1px solid #acacac;font-size:14px;font-weight:bold;margin-top:-30px;margin-right:10px;}
+#divlogin {position:absolute;z-index:1001;}

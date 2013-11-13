@@ -1,0 +1,30 @@
+.uleft {float:left;width:154px;border:1px #dadada solid;padding:8px;}
+.uleft dl{float:left;}
+.uleft dt{width:154px;height:22px;text-align:center;background:url("http://static.laidiantuan.com/static/images/grzx.gif") no-repeat;margin-bottom:8px;padding-top:5px;}
+.uleft strong{font-size:16px;color:#fff;}
+.uleft li{line-height:2em;}
+.uleft li a{color:#666;}
+.uleft .liebiao{border-bottom:1px #dadada solid;}
+.uleft .liebiao a{color:#535353;font-weight:bold;}
+.umm{float:right;width:720px;min-height:240px;color:#535353;border:1px #dadada solid;padding:15px 30px;margin-bottom:8px;}
+.umm dl{float:left;width:720px;line-height:2em;}
+.umm dd{padding:5px 0px;border-top:1px #dadada solid;}
+.umm dd .xgtx{float:left;width:120px;margin-right:15px;margin-top:10px;}
+.umm dd .xgtx img{float:left;width:120px;height:120px;border:1px #dadada solid;}
+.umm dd .xgtx span{float:left;width:80px;text-align:center;margin-top:8px;margin-left:20px;}
+.umm dd .xgtx span a{color:#f67203;}
+.umm dd .grzl{float:left;width:200px;margin-top:10px;}
+.umm dd .xm{clear:both;margin-bottom:8px;}
+.umm .tgtp{float:left;width:90px;margin-top:5px;}
+.umm .tgtp img{float:left;width:90px;height:60px;vertical-align:middle;}
+.umm .tgnr{float:left;width:290px;line-height:1.6em;margin-left:20px;}
+.umm .tgwz{float:left;text-align:center;width:120px;}
+.umm .tgcz{float:left;text-align:center;width:80px;}
+.umm #raw{float:left;margin-left:30px;margin-bottom:20px;}
+.umm #raw #raw_image{max-width:488px;}
+.umm .tjsc{float:left;width:175px;height:118px;border:#dadada 1px solid;margin-right:5px;margin-bottom:5px;line-height:1.5em;}
+.umm .tjsc img{float:left;width:98px;height:62px;border:#dadada 1px solid;margin:5px 5px;}
+.umm .tjsc .jgzk{float:left;width:60px;height:62px;margin-top:5px;}
+.umm .tjsc .jgzk ins{text-decoration:none;color:#ff0000;font-size:16px;}
+.umm .tjsc .tgxx{float:left;width:165px;height:50px;margin-left:5px;}
+.umm .tjsc .tgxx a{color:#535353;}

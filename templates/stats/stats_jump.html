@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block css %}<link href="{{ MEDIA_URL }}css/tiao.css" rel="stylesheet" type="text/css" media="screen" />{% endblock %}
+{% block extra_head %}<script type="text/javascript"> function countdown(secs, url){if (--secs > 0){setTimeout("countdown("+secs+", '"+url+"')", 1000);}else{location.href=url;}}</script>{% endblock %}
+{% block body %}<div class="tz"><div class="kk"><strong><p style="color:#535353;">您将离开 <a>来点团</a>，跳转至 <a>{{ name }}</a></p><p style="color:#535353;">跳转中。。。如果没有自动跳转 <a id="jump" href="{{ url }}">请点击这里</a></p><p style="color:#fe740b;">欢迎您回来发表评论和分享！</p></strong><span><p>1、请勿冲动购买，购买前请先查验该网站的真实性和服务口碑；</p><p>2、团购时仔细阅读团购说明，不明白的地方可以与网站客服、商家电话咨询，避免发生隐形附加收费等问题；</p><p>3、当您团购的商品与网站描述不符时，您可以向该团购网站提出索赔或相应的解决方案。</p></span></div><div>
+<script type="text/javascript">countdown(2, "{{ url }}");</script>{% block footer_script %}{% endblock %}{% endblock %}

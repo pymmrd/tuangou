@@ -1,0 +1,30 @@
+<div class="t_l"><strong class="t">分  类：</strong><div class="f56"><ul>{% if dist_slug and cat_slug  %}<li><a href="{% url show_district_category slug dist_slug cat_slug 1 %}">全部</a></li>
+            {% for c in categories %}
+            <li><a href="{% url show_district_category slug dist_slug c.slug 1 %}" {% if c.slug == parent.slug %}class="hover"{% endif %}>{{ c.title }}</a></li>
+            {% endfor %}
+        {% else %}
+            {% if dist_slug %}
+            <li><a href="{% url show_district slug dist_slug  1 %}">全部</a></li>
+            {% for c in categories %}
+            <li><a href="{% url show_district_category slug  dist_slug c.slug 1 %}" {% if c.slug  == parent.slug %}class="hover"{% endif %}>{{ c.title }}</a></li>
+            {% endfor %}
+            {% else %}
+                <li><a href="{% url show_category slug cat_slug  1 %}">全部</a></li>
+                {% for c in categories %}
+                <li><a href="{% url show_category slug c.slug   1 %}" {% if c.slug  == parent.slug %}class="hover"{% endif %}>{{ c.title }}</a></li>
+                {% endfor %}
+            {% endif %}{% endif %}
+    </ul>
+    {% if parent and parent.children.all %}
+    <ul style="border:#FCC65D 1px dotted;margin-top:5px;padding:10px 10px;background:#FEF4CB;">
+    {% for child in parent.children.active.all %}
+            {% if dist_slug %}
+                <li><a href="{% url show_district_category slug dist_slug child.slug 1 %}" {% if child.slug == cat_slug %}class="hover"{% endif %}>{{ child.title }}</a></li>
+            {% else %}
+                <li><a href="{% url show_category slug child.slug 1 %}" {% if child.slug == cat_slug %}class="hover"{% endif %}>{{ child.title }}</a></li>
+            {% endif %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+    </div> 
+</div>  

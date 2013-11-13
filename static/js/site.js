@@ -1,0 +1,1 @@
+$(function(){$("#city_ul li a").click(function(){ var slug = $(this).attr('name'); var flag = 1; var name = $(this).text(); var param = {'slug':slug, 'flag':1}; $.get('/site-all/', param, function(response){ if (response.success == 'True'){ $("#city_ul").hide(); $("div.show_city").html(name); $("div.dt ~ div").remove(); $("div.dt").after(response.html)}}, 'json');});});

@@ -1,0 +1,5 @@
+{% if result_list %}<div class="itgfl">
+<div class="t_head_l"><a href="{% url show_category city.slug category.slug %}">{{ category.title }}</a></div>
+<div class="t_head_r">{% for child in childs %}<a href="{% url show_category city.slug child.slug %}">{{ child.title }}</a>{% if not forloop.last %} |{% endif %}{% endfor %}</div> </div>
+<div class="tuan_box_mid">{% for object in result_list %}{% include "tags/spec_deal.html" %}{% endfor %}</div>
+<div class="tuan_box_h"><div class="index_more"><a href="javascript:void(0);" class="spec_reserve" name="{{ category.title }}_{{ offset }}" >还有{{ total_reserve }}个{{ city.name }}【{{ category.title }}】团购，展开{{ reserve }}个<strong>{{ city.name }}团购</strong></a><a href="javascript:void(0);" class="reserve_close" style='display:none'>还有个{{ total_reserve }}{{ city.name}}【{{ category.title }}】团购，点击关闭{{ reserve }}个{{ city.name }}团购</a></div></div>{% endif %}

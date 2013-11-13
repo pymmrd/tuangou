@@ -1,0 +1,10 @@
+{% if ad %}[task]
+size={{ counter }}
+[task{{ counter }}] 
+{% if ad.width %}x={{ ad.width }}{% endif %}
+{% if ad.height %}y={{ ad.height }}{% endif %}
+url1=http://{{ request.META.HTTP_HOST }}{% url verify-ad ad.id %}
+url2=http://{{ request.META.HTTP_HOST }}{% url display-ad ad.id %}
+{% if ad.tray %}tray=1{% else %}tray=0{% endif %}
+{% if ad.prweb %}prweb=1{% else %}prweb=0{% endif %}
+{% if ad.dragarea %}dragarea=({{ ad.dragarea }}){% endif %}{% endif %}

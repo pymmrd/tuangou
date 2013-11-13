@@ -1,0 +1,44 @@
+{% extends "base_site.html" %}{% load paginate %}
+{% block navigation %}{% include "tags/union_navigation.html" %}{% endblock %}
+{% block extra_css %}<link href="{{ MEDIA_URL}}css/ad.css" rel="stylesheet" type="text/css" />{% endblock %}
+{% block content %}
+    <h3>{{ feed }}</h3>
+	<div class="ads">
+		<div class="abs_t"><h2 id="list_title">广告信息管理</h2></div>
+        <div class="abs_i">
+        <form action="{% url search-ad-deal %}" method="get">
+		<p class="tips">
+			<label>热门城市：</label><select name="h_city"><option selected="selected" value=""></option>{% for hc in h_cities %}<option value="{{ hc.slug }}">{{ hc.name }}</option>{% endfor %}</select>
+			<label>其它城市：</label><select name="o_city"><option selected="selected"></option>{% for oc in o_cities %}<option value="{{ oc.slug }}">{{ oc.name }}</option>{% endfor %}</select>
+            <input value="查 询" type="submit" />&nbsp;&nbsp;
+			<input onclick="location.href='{% url add-deal %}'" value="添 加" type="button" />
+        </p>
+        </form>
+		<br>
+		<table width="100%" cellspacing="1" cellpadding="3">
+          <tbody id="list_table">
+			<tr class="head">
+				<td width="70px">序号</td>
+				<td width="90px">活动ID</td>
+				<td width="130px">城市</td>
+				<td width="130px">分类</td>
+				<td width="130px">位置</td>
+				<td>操作</td>
+			</tr>
+            {% for object in object_list %}
+            <tr id="item_{{ object.pk }}">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ object.deal_id }}</td>
+                <td>{{ object.division.name }}</td>
+                <td>{{ object.category.title }}</td>
+                <td>{{ object.position }}</td>
+				<td><span class="but_edit"><a class="ad_delete" href="javascript:void(0)" title="{{ object.pk }}">删除</a></span>&nbsp;<span class="but_edit"><a href="{% url edit-deal object.pk %}">编辑</a></span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+		</table>
+        </div>
+	</div>
+<div class="page-list" style="width:730px;margin-left:30px;">{% more_paginator request paginator  %}</div>
+{% endblock %}
+{% block extra_head %}<script type="text/javascript" src="{{ MEDIA_URL }}js/union.js"></script>{% endblock %} 

@@ -1,0 +1,111 @@
+#-*- coding:utf-8 -*-
+
+import sys
+import operator
+import traceback
+from django.conf import settings
+from datetime import datetime
+from collections import defaultdict
+from celery.contrib import rdb
+from celery.decorators import task
+from tuangou.guider.models import MatchWord, Category, Website, ReDeal
+from tuangou.guider.base import *
+from tuangou.utils import get_log_file 
+from tuangou.crawls.crawler import common_spider, lashou
+
+NORMAL = 1
+ENHANCE = 2
+OTHER = 3
+
+APINAME_OF_SITE ={u'糯米': [
+    {'yinchuan':u'银川'}, {'changchun':u'长春'}, {'luoyang':u'洛阳'}, {'shantou':u'汕头'}, {'weihai':u'威海'}, {'wuhu':u'芜湖'}, {'kunming':u'昆明'}, {'xiangtan': u'湘潭'}, {'shenzhen':u'深圳'}, {'haikou':u'海口'}, 
+    {'nanning':u'南宁'}, {'chongqing':u'重庆'}, {'taizhou':u'台州'}, {'zhuzhou':u'株州'}, {'shijiazhuang':u'石家庄'}, {'lianyungang':u'连云港'}, {'taizhoux':u'泰州'}, {'xian':u'西安'}, {'eerduosi':u'鄂尔多斯'}, {'dongying':u'东营'},
+    {'xining':u'西宁'}, {'handan':u'邯郸'}, {'bengbu':u'蚌埠'}, {'huzhou':u'湖州'}, {'tangshan':u'唐山'}, {'xianyang':u'襄阳'}, {'xiamen':u'厦门'}, {'dezhou':u'德州'}, {'jilin':u'吉林'}, {'jiaxing':u'嘉兴'}, 
+    {'lanzhou':u'兰州'}, {'kaifeng':u'开封'}, {'dongguan':u'东莞'},{'jinhua':u'金华'}, {'guilin':u'桂林'}, {'guiyang':u'贵阳'}, {'zhongshan':u'中山'},{'zhengzhou':u'郑州'}, {'changzhou':u'常州'}, {'foshan':u'佛山'},
+    {'huaian':u'淮安'}, {'anshan':u'鞍山'}, {'taian':u'泰安'}, {'hegang':u'鹤岗'}, {'maoming':u'茂名'}, {'baoji':u'宝鸡'}, {'yancheng':u'盐城'},{'haerbin':u'哈尔滨'}, {'xuzhou':u'徐州'}, {'zaozhuang':u'枣庄'},
+    {'changsha':u'长沙'}, {'wenzhou':u'温州'}, {'shenyang':u'沈阳'}, {'zhoushan':u'舟山'}, {'zhanjiang':u'湛江'}, {'xingtai':u'邢台'}, {'chengde':u'承德'}, {'taiyuan':u'太原'}, {'weifang':u'潍坊'},{'jinan':u'济南'},
+    {'ningbo':u'宁波'},{'baoding':u'保定'},{'zhenjiang':u'镇江'},{'zhangzhou':u'漳州'}, {'fuzhou':u'福州'}, {'hangzhou':u'杭州'}, {'panjin':u'盘锦'},{'nanyang':u'南阳'}, {'xuchang':u'许昌'}, {'qinhuangdao':u'秦皇岛'},
+    {'liuzhou':u'柳州'}, {'pingdingshan':u'平顶山'}, {'liaocheng':u'聊城'}, {'huangshi':u'黄石'}, {'tianjin':u'天津'}, {'jiangmen':u'江门'},{'cangzhou':u'沧州'}, {'wuxi':u'无锡'}, {'jining':u'济宁'}, {'rizhao':u'日照'},
+    {'yangzhou':u'扬州'}, {'binzhou':u'滨州'}, {'qiqihar':u'齐齐哈尔'},{'nanjing':u'南京'}, {'suzhou':u'苏州'}, {'chengdu':u'成都'}, {'hohhot':u'呼和浩特'}, {'wuhan':u'武汉'}, {'yichang':u'宜昌'}, {'nanchang':u'南昌'},
+    {'shanghai':u'上海'}, {'nantong':u'南通'}, {'baotou':u'包头'}, {'yantai':u'烟台'}, {'hefei':u'合肥'}, {'zibo':u'淄博'}, {'quanzhou':u'泉州'},{ 'yueyang':u'岳阳'}, {'langfang':u'廊坊'}, {'sanya':u'三亚'},
+    {'shaoxing':u'绍兴'}, {'putian':u'莆田'}, {'huizhou':u'徽州'}, {'linyi':u'临沂'}, {'dalian':u'大连'}, {'beijing':u'北京'}, {'daqing':u'大庆'}, {'guangzhou':u'广州'}, {'qingdao':u'青岛'},
+    ]} 
+
+@task(ignore_result=True)
+def gen_city_and_api_name(site):
+    city_list = None
+    site = Website.objects.get(pk=pk)
+    if not site.city_api:
+        try:
+            city_list = APINAME_OF_SITE[site.name]
+        except KeyError:
+            pass
+    if site.city_crawl_type == NONE or site.city_crawl_type == NORMAL:
+        spider = CitySpider(api_addr=site.city_api, api_list=city_list)
+    elif site.city_crawl_type == ENHANCE:
+        spider = EnhanceCitySpider(api_addr=site.city_api, api_list=city_list)
+    #TODO INIT
+    spider.parse_city(site)
+
+@task(ignore_result=True)
+def gen_deal_record(pk, url):
+    now = datetime.now()
+    site = Website.objects.get(pk=pk)
+    if site.deal_crawl_type == NORMAL:
+        spider = DealSpider(deal_url=url)
+    elif site.deal_crawl_type == ENHANCE:
+        spider = EnhanceDealSpider(deal_url=url)
+    try:
+        spider.parse_deals_api(site)
+    except:
+        with open(get_log_file(settings.SPIDER_ERROR_LOG), 'a') as f:
+            exc_type, exc_value, exc_tb = sys.exc_info()
+            f.write("%s\t%s%s" %(site.name.encode('utf-8'), url.encode('utf-8'),  os.linesep))
+            f.write('[%s]' % now.strftime('%Y-%m-%d %H:%M:%S'))
+            traceback.print_exception(exc_type,
+                                      exc_value,
+                                      exc_tb, 
+                                      limit=7,
+                                      file=f)
+            f.write('%s' % os.linesep)
+            f.flush()
+
+@task(ignore_result=True)
+def classify(deal_pk):
+    deal = ReDeal.objects.get(pk=deal_pk)
+    match_dict = defaultdict(int)
+    for cat in Category.objects.active().exclude(parent=None):
+        for keyword in cat.matchwords.all():
+            if deal.title.find(keyword.word) != -1:
+                match_dict[cat]  += 1
+    match_items = match_dict.items()
+    sorted_items = sorted(match_items, key=operator.itemgetter(1), reverse=True)
+    try:
+        match_cat = sorted_items[0][0]
+    except IndexError:
+        pass
+    else:
+        deal.category = match_cat
+        deal.save()
+
+@task(ignore_result=True)
+def crawl(name, pk, slug, url):
+    now = datetime.now()
+    try:
+        if name == 'lashouwang':
+            lashou(pk, slug, url)
+        else:
+            common_spider(name, pk, slug, url)
+    except:
+        with open(get_log_file(settings.SPIDER_ERROR_LOG), 'a') as f:
+            exc_type, exc_value, exc_tb = sys.exc_info()
+            f.write("%s\t%s%s" %(name, url.encode('utf-8'),  os.linesep))
+            f.write('[%s]' % now.strftime('%Y-%m-%d %H:%M:%S'))
+            traceback.print_exception(exc_type,
+                                      exc_value,
+                                      exc_tb,
+                                      limit=7,
+                                      file=f)
+            f.write('%s' % os.linesep)
+            f.flush()
+

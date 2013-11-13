@@ -1,0 +1,2 @@
+<option value='0' {% if not districts %}selected='selected'{% endif %}>None</option>
+{% for dis in districts %}<option value="{{ dis.pk }}">{{ dis.city__name}}&gt;{{ dis.name }}</option>{% endfor %}

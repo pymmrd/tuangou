@@ -1,0 +1,57 @@
+{% extends "base_site.html" %}
+{% block extra_css %}
+	<link href="{{ MEDIA_URL }}css/list.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="{{ MEDIA_URL }}css/login.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block extra_head %}
+	 <script type="text/javascript" src="{{ MEDIA_URL }}js/register.js"></script>
+{% endblock %}
+
+{% block brand %}{% endblock %}
+{% block content %}<div id="login-box"><div class="login-top"></div><div class="login-main register_h"><form method="post" action="." id="register_form">{% csrf_token %}{{ form.next }}<dl>
+					 <dt>Email:</dt>
+					 <dd>
+					{{ form.username }}
+						  {% if form.errors.username %}{{ form.errors.username|safe }}{% endif %}
+					 </dd>
+					 <dt>{{ form.nickname.label }}:</dt>
+					 <dd>{{ form.nickname }}
+						  {% if form.errors.nickname %}{{ form.errors.nickname|safe }}{% endif %}
+					 </dd>
+					 <dt>{{ form.password1.label }}:</dt>
+					 <dd><input type="password" id="password1" size="20"  name="password1"/></dd>
+				<dt style="height:14px;line-height:14px;">&nbsp;</dt>
+				<dd style="height:14px;line-height:14px;color:#666;vertical-align:middle;">
+					<p style="float:left;">强度：</p>
+						  <table width="110px" height="14px" border="0" cellspacing="0" cellpadding="1" bordercolor="#cccccc" style='font-size:12px'>
+						  <tr align="center" bgcolor="#eeeeee">
+							  <td width="33%" id="strength_L">弱</td>
+							  <td width="33%" id="strength_M">中</td>
+							  <td width="33%" id="strength_H">强</td>
+						  </tr>
+						  </table>
+				</dd>
+					 <dt>{{ form.password2.label }}:</dt>
+					 <dd>{{ form.password2 }}
+					 {% if form.errors.password2 %}{{ form.errors.password2|safe }}{% endif %}
+					 </dd>
+					 <dt>性别:</dt>
+					 <dd>
+						  <span>男</span><input name="gender" type="radio"  value="1" checked="checked" />
+						  <span>女</span><input name="gender" type="radio" value="2" >
+					 </dd>
+					 <dt>验证码:</dt>
+					 <dd>
+					<input id="vdcode" type="text" name="verify_code"/>
+						  <img src="{% url get_check_code_image %}" onclick="this.setAttribute('src', '{% url get_check_code_image %}?nocache='+Math.random());" title="看不清？点击更换"/>
+					 {% if error_msg %}<span class="highlight">{{ error_msg  }}</span>{% endif %}
+				</dd>
+
+					 <dt>&nbsp;</dt>
+					 <dd><input type="submit" name="sm1" value="注册"/></dd>
+				</dl>
+				</form>
+		</div>
+	</div>
+
+{% endblock %}

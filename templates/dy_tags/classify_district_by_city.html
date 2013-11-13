@@ -1,0 +1,38 @@
+<div class="choose" id="city_ul">
+<ul class="iul">
+<div class="hot">热门城市</div>
+<div class="c"><li><a href="{% url  classify_district 'beijing' %}">北京</a></li><li><a href="{% url  classify_district 'shanghai' %}">上海</a></li><li><a href="{% url  classify_district 'shenzhen' %}">深圳</a></li><li><a href="{% url classify_district  'guangzhou' %}">广州</a></li><li><a href="{% url classify_district 'zhengzhou' %}">郑州</a></li><li><a href="{% url classify_district 'hangzhou' %}">杭州</a></li><li><a href="{% url classify_district 'chengdu' %}">成都</a></li></div>
+<div style="float:right"><a href="javascript:void(0);" class="white" onClick="document.getElementById('city_ul').style.display='none';">关闭</a></div>
+</ul>
+<div style="margin-top:5px;margin-bottom:5px;float:left;"><form name="formsearch" action=""><input type="text" name="name" maxlength="10" id="search_city_input" class="text" value="输入城市名" onfocus="if(this.value=='输入城市名'){this.value='';}" onblur="if(this.value==''){this.value='输入城市名';}" /><button type="submit" id="search_city_form" class="search-submit">团购搜索</button></form></div>
+<div class="city_name">
+<table style="width:80%">
+{% if A_letter.count  %}<tr><td style="padding-top:4px;"><div class="nob">A</div></td><td><ul>{% for item in A_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif%}
+{% if B_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">B</div></td><td><ul>{% for item in B_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if C_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">C</div></td><td><ul>{% for item in C_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if D_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">D</div></td><td><ul>{% for item in D_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if E_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">E</div></td><td><ul>{% for item in E_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if F_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">F</div></td><td><ul>{% for item in F_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if G_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">G</div></td><td><ul>{% for item in G_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if H_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">H</div></td><td><ul>{% for item in H_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if I_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">I</div></td><td><ul>{% for item in I_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if J_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">J</div></td><td><ul>{% for item in J_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if K_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">K</div></td><td><ul>{% for item in K_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if L_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">L</div></td><td><ul>{% for item in L_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if M_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">M</div></td><td><ul>{% for item in M_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if N_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">N</div></td><td><ul>{% for item in N_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if O_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">O</div></td><td><ul>{% for item in O_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if P_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">P</div></td><td><ul>{% for item in P_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if Q_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">Q</div></td><td><ul>{% for item in Q_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if R_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">R</div></td><td><ul>{% for item in R_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if S_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">S</div></td><td><ul>{% for item in S_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if T_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">T</div></td><td><ul>{% for item in T_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if U_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">U</div></td><td><ul>{% for item in U_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if V_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">V</div></td><td><ul>{% for item in V_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if W_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">W</div></td><td><ul>{% for item in W_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if X_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">X</div></td><td><ul>{% for item in X_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if Y_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">Y</div></td><td><ul>{% for item in Y_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+{% if Z_letter.count %}<tr><td style="padding-top:4px;"><div class="nob">Z</div></td><td><ul>{% for item in Z_letter %}<li><a href="{% url classify_district item.slug %}">{{ item.name }}</a></li>{% endfor %}</ul></td></tr>{% endif %}
+</table>
+</div>
+</div>

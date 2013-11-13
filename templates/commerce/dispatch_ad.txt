@@ -1,0 +1,10 @@
+{% load commerce_filters %}{% if ads %}[task]
+size={{ counter }}
+{% for ad in ads %}[task{{ forloop.counter }}]
+{% if ad.width %}x={{ ad.width }}{% endif %}
+{% if ad.height %}y={{ ad.height }}{% endif %}
+url1=http://{{ domain_name }}{% url verify-ad ad.id %}
+url2=http://{{ domain_name }}{% url display-ad ad.id %}
+sleep=10
+{% endfor %}{% endif %}
+

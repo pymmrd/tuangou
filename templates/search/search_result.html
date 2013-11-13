@@ -1,0 +1,11 @@
+{% extends "base_site.html" %}{% load paginate %}{% load guider_tags %}{% load search_tags %}
+{% block title %}{{ title }} {% endblock %}
+{% block keywords %}{{ meta_keywords }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+{% block content_left %}{% block constrain %}<div class="tfl"><dl class="tbox"><dt><strong>团购分类</strong>{% include "tags/filters_tag.html" %}</dt><dd>{% block district %}{% search_district request city qdist %}{% endblock %}{% include "tags/price_tag.html" %}</dd></dl></div>{% endblock %}
+<div class="tuan">{% if result_list  %}
+<span style="float:left;color:#333;width:740px;border-bottom:#FF720C 2px solid;padding:5px 5px;">
+您当前搜索的是“{{ city.name }}{% if qdist %}{{ qdist }}{% endif %}”地区包含“{{ query }}”的团购:</span><div id="tuan_box_mid">{% for object in result_list %}{% include "tags/search_deal.html" %}{% endfor %}</div><div class="page-list">{% more_paginator request paginator %}</div>{% else %}
+<span style="float:left;color:#333;width:740px;border-bottom:#FF720C 2px solid;padding:5px 5px;">
+没有找到“{{ city.name }}{% if qdist %}{{ qdist }}{% endif %}”和“{{ query }}”相关的团购信息， 换个关键字试试！</span>{% endif %}</div>{% endblock %}
+{% block content_right %}{% include seller_chart %}{% include view_chart %}{% endblock  %}

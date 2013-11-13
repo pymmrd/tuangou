@@ -1,0 +1,99 @@
+.tbox{border-bottom:1px solid #DADADA;overflow:hidden;background:url(http://static.laidiantuan.com/static/images/green_skin.png) 0 -294px repeat-x;}
+.tbox dt{height:24px; border:1px solid #DADADA; overflow:hidden; clear:both;}
+.chart dt{height:30px;border-top:3px solid #FF720C;border-left:1px solid #DADADA;border-right:1px solid #DADADA;border-bottom:0px solid #DADADA;}
+.downimg{width:240px;height:79px;text-align:center;margin-bottom:5px;}
+.hot_chart{}
+.hot_chart li{padding:10px 5px;border-bottom:1px dotted #DADADA;}
+.hot_chart img{float:left;width:60px;height:60px;}
+.hot_chart p{padding-left:5px;height:60px;overflow:hidden;}
+.hot_chart a{color:#333;}
+.tbox dd{border-left:1px solid #DADADA;border-right:1px solid #DADADA; overflow:hidden;}
+.tbox dt strong{float:left;height:24px;line-height:24px; !important;line-height:25px;padding-left:8px;color:#525252;letter-spacing:1px;}
+.chart strong{font-size:18px;padding-top:5px;}
+.tbox dt strong a{color:#316301;}
+.tbox dt strong a:hover{color:#596F37;text-decoration:none;}
+.tbox dt span.more{float:right;position:relative;line-height:25px;padding-right:8px;color:#535353;}
+.tbox dt span.more a{color:#535353;text-decoration:none;}
+.tbox dt span.more a:hover{color:#ff3333;text-decoration:underline;}
+.tbox dt span.label{height:25px;float:right;overflow:hidden;padding-right:1px;padding-top:2px;}
+.tbox dt span.label a{height:26px;display:block;padding:0px 7px 0px 8px;line-height:26px;border-left:1px solid #DADADA;float:left;color:#666;text-decoration:none;overflow:hidden;letter-spacing:1px;}
+.tbox dt span.label a:hover{color:#360;}
+.tbox dt span.label a.thisclass{background:#FFF;color:#333;border-top:3px solid #DADADA;}
+.tbox dt span.linklabel{float:left;margin-left:10px;overflow:hidden;padding-right:1px;padding-top:2px;}
+.tbox dt span.linklabel a{height:20px;display:block;padding:0px 7px 0px 8px;margin:0 5px;line-height:20px;border-left:1px solid #DADADA;border-top:1px solid #DADADA;border-right:1px solid #DADADA;float:left;color:#666;text-decoration:none;overflow:hidden;letter-spacing:1px;}
+.tbox dt span.linklabel a:hover{color:#360;}
+.tbox dt span.linklabel a.thisclass{background:#FFF;color:#333;}
+.chart{margin-bottom:10px;width:100%;}
+.light {background:none;}
+.light dt{height:24px;border:1px solid #DADADA;overflow:hidden;background:url(http://static.laidiantuan.com/static/images/green_skin.png) 0 -188px repeat-x;clear:both;}
+.light dd{border-left:1px solid #DADADA;border-right:1px solid #DADADA;overflow:hidden;}
+dt.light strong{color:#525252;}
+.f5{width:100%; height:75px; overflow:hidden; clear:both;}
+.f5 li{width:82px;height:24px;float:left;line-height:24px;white-space:nowrap;overflow:hidden;}
+.f5 li a{color:#000;float:left;padding-left:18px;overflow:hidden;vertical-align:middle;background:url(http://static.laidiantuan.com/static/images/tuan.png) no-repeat scroll left center transparent;}
+.f55{overflow:hidden;display:none;}
+.f55 .alert{float:left;margin-top:2px;margin-left:10px;padding:2px 5px;border:1px solid #FCC65D;background:#FEF4CB;}
+.f55 li{float:left; display:inline;line-height:14px;padding:4px 8px;white-space:nowrap; margin-left:9px;}
+.f55 li a{color:#666;float:left;padding:2px 4px;}
+.f55 li a img{border:3px solid #EEE;}
+.f55 li .hover{background:#ff720c; color:#fff;}
+.t_l {width:100%; clear:both; }
+.f56{float:left; height:auto; width:92%; overflow:hidden;padding-top:4px;padding-bottom:5px;}
+.t{float:left; padding-top:7px; padding-left:6px; padding-right:6px; color:#666; }
+.f56 ul{clear:both; float:left; }
+.f56 li{float:left; line-height:14px; padding:2px 2px; white-space:nowrap; }
+.f56 li strong{color:#666 ;float:left;padding:2px 4px;}
+.f56 li a{color:#666 ;float:left;padding:2px 4px;}
+.f56 li a img{border:3px solid #EEE; }
+.f56 li a:hover{background:#FEF4CB; color: #ff720c;}
+.f56 li .hover{background:#ff720c; color: #fff;}
+.t8{float:right;width:220px;overflow:hidden;vertical-align:middle;}
+.t8 li{float:left;line-height:14px;padding:5px 4px;white-space:nowrap;}
+.t8 li.ss{background:url(http://static.laidiantuan.com/static/images/xj.gif) 0px 5px no-repeat;}
+.t8 li.xj{background:url(http://static.laidiantuan.com/static/images/ss.gif) 0px 5px no-repeat;}
+.t8 li a{color:#666666;float:left;margin-left:14px;text-decoration:none;}
+#tgw {position:relative;width:750px;margin:0 auto 10px; height:102px;line-height:25px;color:#525252;border:#dadada 1px solid;background:url(http://static.laidiantuan.com/static/images/green_skin1.png) 0 -294px repeat-x;}
+#tgw span{float:right;margin-right:10px;}
+#tgw span a{color:#525252;}
+#tgw h2 {display:block;float:left;margin-left:10px;font-size:12px;font-weight:bold;text-align:center;cursor:pointer;color:#535353;text-decoration:none;}
+#tgw .title_current1 {background:#fba234; color:#FFF;font-weight:bold;}
+#tgw ul {position:absolute;left:0px;top:25px;width:738px;padding:0px 2px 5px 10px;border-top:#dadada 1px solid;font-size:12px;overflow:hidden;}
+.itgfl {position:relative;width:100%;height:39px;color:#525252;border:#dadada 0px solid;background:url("http://static.laidiantuan.com/static/images/fl.gif") no-repeat scroll -10px -10px transparent;}
+.itgfl .t_head_l {float:left;width:80px;font-size:18px;font-weight:bold;vertical-align:middle;padding-right:50px;padding-left:30px;padding-top:8px; }
+.itgfl .t_head_l a{color:#fff;text-decoration:none; }
+.itgfl .t_head_r{float:left;padding-top:12px; }
+.itgfl .t_head_r a{color:#333; }
+.itgfl a h2 {float:left;width:80px;height:25px;line-height:25px;font-size:12px;font-weight:normal;text-align:center;cursor:pointer;color:#535353;text-decoration:none;overflow:hidden;}
+.itgfl .title_current {color:#fff;text-decoration:none; background:#fba234;font-weight:bold;overflow:hidden;}
+.itgfl ul {position:absolute;width:750px;left:0px;top:25px;padding-top:3px;border-top:#dadada 1px solid;overflow:hidden;}
+.itgsj{color:#666;padding:8px 8px;}
+.itgsj li{line-height:1.6em;}
+.c1 {}
+.c1 li{height:35px;line-height:1.4em;margin-bottom:5px;padding-bottom:5px;border-bottom:1px #dadada dotted;overflow:hidden;}
+.c1 li .phb{float:left;width:45px;height:25px;color:#535353;text-align:center;border:#fcc65d 1px solid;background:#fef4cb;margin-top:2px;margin-right:5px;padding-top:5px;}
+.c1 li .djphb{float:left;width:20px;height:20px;color:#535353;text-align:center;border:#fcc65d 1px solid;background:#fef4cb;margin-top:4px;margin-right:5px;padding-top:4px;}
+.chart .chart_a{height:34px;overflow:hidden;}
+.c1 li a{color:#666;}
+.highlight{color:red;}
+.highground{background:red;}
+.t_ljg{float:left;margin-left:10px;}
+.t_ljg li{width:65px;float:left;font-size:12px;color:#535353;text-align:center;line-height:12px;padding:8px 0px 0px;}
+.t_ljgs{float:left;margin-left:10px;}
+.t_ljgs li{width:65px;float:left;font-size:12px;color:#ff0000;text-align:center;line-height:12px;padding:8px 0px 0px;}
+.t_ljgs li del{color:#929292;}
+.sina{background:url(http://static.laidiantuan.com/static/images/fenxiang/sina.gif) no-repeat scroll 0 8px transparent;}
+.qq {background:url(http://static.laidiantuan.com/static/images/fenxiang/qq.gif) no-repeat scroll 0 8px transparent;}
+.qz {background:url(http://static.laidiantuan.com/static/images/fenxiang/qz.gif) no-repeat scroll 0 8px transparent;}
+.renren{background:url(http://static.laidiantuan.com/static/images/fenxiang/renren.gif) no-repeat scroll 0 8px transparent;}
+.kaixin{background:url(http://static.laidiantuan.com/static/images/fenxiang/kaixin.gif) no-repeat scroll 0 8px transparent;}
+.i163{background:url(http://static.laidiantuan.com/static/images/fenxiang/163.gif) no-repeat scroll 0 8px transparent;}
+.douban{background:url(http://static.laidiantuan.com/static/images/fenxiang/douban.gif) no-repeat scroll 0 8px transparent;}
+.s5{overflow:hidden;clear:both;margin-top:-5px;}
+.s5 li{float:left;line-height:16px;padding:8px 10px 0px;margin-right:5px;white-space:nowrap;background:url(http://static.laidiantuan.com/static/images/tuan.png) 0px 8px no-repeat;}
+.s5 li a{color:#666666;float:left;margin-left:8px;}
+.fs{overflow:hidden;clear:both;margin-top:-5px;}
+.fs li{float:left;line-height:16px;padding:8px 10px 0px;margin-right:5px;white-space:nowrap; }
+.fs li a{color:#666666;float:left;margin-left:8px;}
+.tt5{overflow:hidden;clear:both;margin-top:-5px;}
+.tt5 li{float:left;line-height:14px;color:#666;padding:8px 0px 0px;margin-right:15px;white-space:nowrap;}
+.tt5 li a{color:#666;float:left;margin-left:5px;}

@@ -1,0 +1,67 @@
+<html>
+    <body>
+        <h1>广告分发流程(客户端交互)</h1>
+        <h2>一. 分发广告</h2>
+            <p>
+               <h3> 获取广告地址: http://192.168.100.41/commerce/dispatch-ad/</h3>
+               <label>返回文本格式</label>
+                <div>
+                    
+                    [task] 
+                      <br />
+                     size=3
+                     <br />
+                    [task1]
+                    <br/>
+                    x=100
+                    <br />
+                    y=100
+                    <br />
+                    sleep = 10（单位:分)
+                    <br />
+                    url1="http://192.158.100.41/commerce/verify-ad/ad.id/"
+                    <br />
+                    url2=内容地址
+                    <br />
+                    [task2]
+                    <br />
+                     x= 200
+                    <br />
+                     y = 200
+                    <br />
+                     sleep =20
+                     <br />
+                    url1="http://192.168.100.41/commerce/verfiy-ad/ad.id/"
+                    <br />
+                    url2=内容地址
+                    <br />
+                    [task3]
+                    <br />
+                     x= 200
+                     <br />
+                     y = 200
+                     <br />
+                     sleep =20
+                     <br />
+                    url1="http://192.168.100.41/commerce/verfiy-ad/ad.id/"
+                    <br />
+                    url2=内容地址
+                    <br />
+                    <p> 备注：sleep相对上一个广告弹出的时间间隔</p>
+                </div>
+            </p>
+        <h2>二. 检验是否执行广告</h2>
+         <p>
+         [return]
+         flag=True（执行)｜False(不执行)
+         </p>
+        <h2>三.获取广告内容</h2>
+            <p>通过url2获取广告内容</p>
+    </body>
+</html>
+
+
+
+                    
+               
+                

@@ -1,0 +1,51 @@
+*{margin:0px;}
+html {overflow-x:hidden;overflow-y:hidden;}
+body{overflow:hidden;font:12px Arial,Helvetica,宋体;}
+a{text-decoration:none;}
+img{border:0;}
+a:hover{text-decoration:underline;}
+.content{width:368px;height:431px;border:0;padding:1px;background:#f4f4f4;overflow:hidden;}
+.center1{margin:0 auto;}
+.title{background:url(http://static.laidiantuan.com/static/app/mini_t.jpg);height:30px;margin-bottom:5px;}
+.title .mt_l {color:#FFFFFF;float:left;font-weight:bold;margin-left:152px;margin-top:8px;width:80px;}
+.title .mt_r {float:right;margin-top:0;width:64px;}
+.mize {float:left;font-size:20px;height:20px;line-height:16px;width:30px;}
+.close {float:right;font-size:20px;height:20px;line-height:16px;width:33px;}
+
+.k_l{float:left;}
+.k_r{float:right;}
+.kuaijie a{padding:0 5px;color:#00a0e9;}
+.nv{height:345px;}
+.nv_on{padding-left:10px;background:#f4f4f4;height:26px;overflow:hidden;}
+.nv_on span{text-align:center;width:75px;height:26px;background:#fff;float:left;border-style:solid;border-color:#fff;border-width:1px 1px 0px 1px;margin-left:5px;}
+.nv_on a{width:74px;padding:6px 0;float:left;color:#353535;padding-top:px;font-weight:normal;text-align:center;cursor:pointer;}
+.nv_on a:hover{text-decoration:none;}
+.nv_on .on{font-weight:bold;background:#B6DCFD;border-style:solid;border-color:#B6DCFD;border-width:1px 1px 0px 1px;}
+.nv_on .on a{color:#444;font-weight:bold;}
+
+.tuan_ms{clear:both;height:318px;padding:10px 0px 10px 10px;border-top:2px #B6DCFD solid;background:#fff;}
+.tm_h{float:left;width:578px;height:26px;border:0px #ebebeb solid;}
+.tm_l{float:left;width:424px;height:265px;border-style:solid;border-color:#ebebeb;border-width:1px 0px 1px 1px;}
+.tm_r{float:right;width:155px;height:266px;border-style:solid;border-color:#ebebeb;border-width:0px 0px 1px 0px;}
+.tm_r span{text-align:center;width:153px;height:52px;background:#fff;float:left;margin-top:0px;border-style:solid;border-color:#ebebeb;border-width:1px 1px 0px 1px;}
+.tm_r a{line-height:1.5em;width:130px;padding:8px 10px;float:left;color:#353535;padding-top:px;font-weight:normal;text-align:left;cursor:pointer;}
+.tm_r .on{font-weight:bold;background:#fff3dc;border-style:solid;border-color:#ddc599;border-width:1px 1px 1px 1px;}
+.tm_r .on .on_bg{display:block;}
+.tm_r .on a{color:#8c5641;font-weight:bold;}
+.tm_r .on_bg{display:none;margin-left:-10px;*margin-left:-161px;margin-top:18px;width:10px;height:17px;background:url(http://static.laidiantuan.com/static/app/u.gif) no-repeat;position:absolute;}
+
+#play{margin-left:-40px;*margin-left:0px;}
+#play img{height:64px;padding:3px;width:64px;}
+
+#play li{overflow:hidden;float:left;width:80px;text-align:center;border:medium none;border-radius:4px 4px 4px 4px;margin-right:8px;margin-bottom:10px;padding:5px 0;}
+#play .ddd{position:relative;height:70px;width:70px;margin-right:auto;margin-left:auto;margin-bottom:5px;}
+#play .ddd i{background:url("http://static.laidiantuan.com/static/app/round_cover.png") repeat scroll 0 0 transparent;left:0;top:0;cursor:pointer;height:70px;width:70px;position:absolute;}
+#play li:hover {background-color:#E5EDF2;color:#336699;text-shadow:none;}
+#play li a{display:block;color:#0068b7;word-wrap:break-word;}
+#play li .aaa{height:14px;overflow:hidden;}
+
+ul{list-style:none;}
+.page-list{float:left;width:720px;height:22px;border:#DADADA 0px solid;padding:3px 12px;margin-bottom:10px;}
+.page-list a{float:left;height:20px;font-size:14px;border:#DADADA 1px solid;padding:0px 8px;margin-right:8px;vertical-align:middle;}
+.page-list .this_page{float:left;height:20px;border:#fcc65d 1px solid;font-size:14px;background:#fef4cb;color:#ff0000;font-weight:bold;padding:0px 8px;margin-right:8px;}
+.page-list .dot{float:left;margin-right:8px;color:#666;}

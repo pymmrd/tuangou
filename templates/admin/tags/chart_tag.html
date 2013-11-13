@@ -1,0 +1,3 @@
+<table width="300px"><caption style="font-size:14px;">广告区域点击数统计</caption><thead><tr><th width="150px;">区域</th><th width="150px;">点击数</th></tr></thead>
+{% for item in items %}<tr><td width="150px">{{ item.0|capfirst }}</td><td width="150px">{{ item.1.uv }}</td></tr>{% endfor %}<tr><td width="150px">总计</td><td width="150px">{{ total }}</td></tr>
+</table>

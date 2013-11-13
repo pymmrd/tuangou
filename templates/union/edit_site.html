@@ -1,0 +1,22 @@
+{% extends "base_site.html" %}{% load guider_tags %}
+{% block navigation %}{% include "tags/union_navigation.html" %}{% endblock %}
+{% block content %}
+	<div class="ads">
+        <div class="abs_input">
+            <form action="{% url site-pos-edit object_id %} " method="post">{% csrf_token %}
+                <table>
+                <tr><td class="r">热门城市：</td><td><select id="cityKey" name="h_city"><option selected="selected"></option>{% for hc in h_cities %}<option {% if hc.slug == adsp.division.slug %}selected="selected"{% endif %} value="{{ hc.slug }}">{{ hc.name }}</option>{% endfor %}</select></td></tr>
+                <tr><td class="r">其它城市：</td><td><select id="otherCityKey" name="o_city"><option selected="selected"></option>{% for oc in o_cities %}<option {% if oc.slug == adsp.division.slug %}selected="selected"{% endif %}  value="{{ oc.slug }}">{{ oc.name }}</option>{% endfor %}</select></td></tr>
+                <tr><td class="r">分类：</td><td><select name='category'>{% for category in categories %}<option {% if adsp.category.slug == category.slug %}selected="selected"{% endif %} value='{{ category.slug }}'>{{ category.title }}</option>{% endfor %}</select></td></tr>
+                <tr><td class="r">优先级：</td><td><input type="text" class="text" name="priority" value="{{ adsp.priority }}" /></td></tr>
+                <tr><td class="r">站点ID：</td><td><input type="text" class="text" id="site" name="site" value="{{ adsp.site }}" /><span class="tips">({{ adsp.site }}/{% get_website adsp.site %})</span></td></tr>
+                <tr><td class="r">位置：</td><td><input type="text" class="text" name="position" value="{{ adsp.position }}" /></td></tr>
+                <tr><td class="r">开始时间：</td><td><input class="Wdate" type="text" name="start_date" id="start_date" style="color:#626262" onClick="WdatePicker()" value="{{ adsp.start_date|date:"Y-m-d" }}"><span>(日期格式如:2012-04-03)</span></td></tr>
+                <tr><td class="r">结束时间：</td><td><input class="Wdate" type="text" name="end_date" id="start_date" style="color:#626262" onClick="WdatePicker()" value="{{ adsp.expire_date|date:"Y-m-d" }}"><span>(日期格式如:2012-04-03)</span></td></tr>
+                <tr><td class="r"></td><td><input value="确 定" style="width:74px;height:28px;line-height:28px;margin:5px 0;" type="submit"></td></tr>
+                </table>
+            </form>
+        </div>
+	</div>
+{% endblock %}
+{% block extra_head %}<script type="text/javascript" src="{{ MEDIA_URL }}js/union.js"></script>{% endblock %} 

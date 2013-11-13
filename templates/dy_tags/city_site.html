@@ -1,0 +1,6 @@
+{% load safe_filters %}
+<ul class="f5">
+    {% for site in sites %}
+    <li class="ss"><a href='/stats/jump-to/site-{{ site.pk }}'  target='_blank'>{{ site.name|safe_slice:":5" }}</a> </li>
+    {% endfor %}
+</ul>

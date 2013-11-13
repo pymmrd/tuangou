@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>来点团 - 联盟中心</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content ="团购,团购网,团购网站大全,团购导航,团购网站,团购网大全,团购网站导航,团购大全" name="keywords" />
+	<meta content ="最好的中国团购网站大全,美团,糯米等每日团购网的团购网站导航!汇集北京团购网,上海团购网,和包括广州,深圳,南京,杭州,成都,青岛,西安等的团购网站大全和团购导航" name="description" />
+    
+	<link REL="SHORTCUT ICON" HREF="/static/favicon.ico" />
+    <link href="http://static.laidiantuan.com/static/css/layout.css?5201314" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.laidiantuan.com/static/css/header.css?1178" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.laidiantuan.com/static/css/city.css?1178" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.laidiantuan.com/static/css/page.css?1178" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.laidiantuan.com/static/css/box.css?1178" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.laidiantuan.com/static/css/style.css?3" rel="stylesheet" type="text/css" media="screen" />
+    <link href="http://static.laidiantuan.com/static/css/login.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/static/css/ad.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" src="js/WdatePicker.js" type="text/javascript"></script>
+</head>
+
+<body style="font: 12px Verdana,Arial,Tahoma;">
+    <div class="header_top">
+        <div class="w960 center">
+            <span class="login"></span>
+            <div class="toplinks">
+                <a href="/accounts/profile/" class="rss">个人中心</a>
+                <span>
+                    [<a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.laidiantuan.com');">设为首页</a>]
+                    [<a title="来点团" onclick="if(document.all && !window.opera){ window.external.AddFavorite(location.href, document.title);return false; }else{ this.title = document.title; }" rel="sidebar" href="">加入收藏</a>]
+                </span>
+            </div>
+        </div>
+    </div>
+    
+	<div class="header body_b">
+        <div class="top w960 center">
+            <div class="title"><h1><a href="/beijing/"><img src="http://static.laidiantuan.com/static/images/logo.png" alt="来点团"/></a></h1></div>
+        </div>
+    </div>
+    
+    <div class="header_bar">
+        <div class="w960 center">
+            <div id="navMenu" class="w960 center">
+                <ul>
+                    <li><a href='http://www.laidiantuan.com'><span>今日团购</span></a></li>
+                    <li><a href='http://www.laidiantuan.com/site-all/'><span>网站大全</span></a></li>
+                    <li><a href='http://www.laidiantuan.com/accounts/profile/'><span>个人中心</span></a></li>
+                    <li><a href="http://www.laidiantuan.com/open-api/"><span>开放API</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div class="w960 center clear mt1">
+	<div class="ads">
+		<div class="abs_t"><h2 id="list_title">广告信息管理</h2></div>
+        <div class="abs_i">
+		<p class="tips" style="">
+			<label>检索条件 </label><label>状态：</label>
+            <select id="statusKey" name="status" onchange="">
+				<option selected="selected" value="1">正在进行中</option>
+				<option value="2">已结束</option>
+				<option value="3">未开始</option>
+				<option value="4">正在进行和未开始</option>
+			</select>&nbsp;
+			<label>热门城市：</label>
+            <select id="cityKey" name="status" onchange="">
+				<option selected="selected" value="">
+				</option><option id="sCity_0" value="0">  北京</option> <option id="sCity_1" value="1">  上海</option> <option id="sCity_4" value="4">  天津</option> <option id="sCity_2" value="2">  广州</option> <option id="sCity_3" value="3">  深圳</option> <option id="sCity_5" value="5">  苏州</option> <option id="sCity_10" value="10">  南京</option> <option id="sCity_27" value="27">  武汉</option> <option id="sCity_8" value="8">  成都</option> <option id="sCity_17" value="17">  西安</option> <option id="sCity_6" value="6">  杭州</option> <option id="sCity_11" value="11">  重庆</option> <option id="sCity_9" value="9">  青岛</option> <option id="sCity_28" value="28">  郑州</option> <option id="sCity_34" value="34">  济南</option> <option id="sCity_23" value="23">  宁波</option> <option id="sCity_7" value="7">  大连</option> <option id="sCity_12" value="12">  沈阳</option> <option id="sCity_14" value="14">哈尔滨</option> <option id="sCity_32" value="32">  福州</option> <option id="sCity_35" value="35">石家庄</option> <option id="sCity_31" value="31">  厦门</option> <option id="sCity_30" value="30">  南宁</option> <option id="sCity_13" value="13">  长春</option> <option id="sCity_26" value="26">  长沙</option> <option id="sCity_36" value="36">  太原</option> <option id="sCity_-1" value="-1">  全国</option> 
+			</select>&nbsp; 
+			<label>其实城市：</label>
+            <select id="otherCityKey" name="status" onchange="">
+				<option selected="selected" value="">
+				</option><option id="city59" value="59">安庆</option><option id="city60" value="60">鞍山</option><option id="city121" value="121">安顺</option><option id="city61" value="61">安阳</option><option id="city257" value="257">澳门</option><option id="city122" value="122">白城</option><option id="city123" value="123">白山</option><option id="city51" value="51">保定</option><option id="city55" value="55">宝鸡</option><option id="city38" value="38">包头</option><option id="city124" value="124">北海</option><option id="city0" value="0">北京</option><option id="city62" value="62">蚌埠</option><option id="city125" value="125">本溪</option><option id="city126" value="126">亳州</option><option id="city254" value="254">沧州</option><option id="city254" value="254">沧州</option><option id="city13" value="13">长春</option><option id="city88" value="88">常德</option><option id="city26" value="26">长沙</option><option id="city127" value="127">常熟</option><option id="city128" value="128">长治</option><option id="city42" value="42">常州</option><option id="city129" value="129">巢湖</option><option id="city130" value="130">潮州</option><option id="city89" value="89">承德</option><option id="city8" value="8">成都</option><option id="city131" value="131">郴州</option><option id="city132" value="132">赤峰</option><option id="city133" value="133">赤水</option><option id="city134" value="134">池州</option><option id="city11" value="11">重庆</option><option id="city135" value="135">滁州</option><option id="city136" value="136">从化</option><option id="city137" value="137">大理</option><option id="city7" value="7">大连</option><option id="city138" value="138">丹东</option><option id="city139" value="139">丹阳</option><option id="city39" value="39">大庆</option><option id="city63" value="63">大同</option><option id="city140" value="140">德惠</option><option id="city141" value="141">登封</option><option id="city90" value="90">德州</option><option id="city142" value="142">定州</option><option id="city49" value="49">东莞</option><option id="city143" value="143">东阳</option><option id="city64" value="64">东营</option><option id="city144" value="144">敦化</option><option id="city145" value="145">敦煌</option><option id="city146" value="146">都匀</option><option id="city91" value="91">鄂尔多斯</option><option id="city147" value="147">峨眉山</option><option id="city57" value="57">鄂州</option><option id="city50" value="50">佛山</option><option id="city65" value="65">抚顺</option><option id="city92" value="92">阜阳</option><option id="city32" value="32">福州</option><option id="city148" value="148">赣州</option><option id="city2" value="2">广州</option><option id="city52" value="52">桂林</option><option id="city22" value="22">贵阳</option><option id="city14" value="14">哈尔滨</option><option id="city149" value="149">海城</option><option id="city29" value="29">海口</option><option id="city150" value="150">海宁</option><option id="city151" value="151">哈密</option><option id="city53" value="53">邯郸</option><option id="city6" value="6">杭州</option><option id="city152" value="152">汉中</option><option id="city37" value="37">合肥</option><option id="city153" value="153">黑河</option><option id="city154" value="154">衡水</option><option id="city66" value="66">衡阳</option><option id="city155" value="155">和田</option><option id="city156" value="156">河源</option><option id="city157" value="157">菏泽</option><option id="city158" value="158">花都</option><option id="city95" value="95">淮安</option><option id="city159" value="159">淮北</option><option id="city160" value="160">怀化</option><option id="city161" value="161">淮南</option><option id="city162" value="162">黄山</option><option id="city163" value="163">黄石</option><option id="city33" value="33">呼和浩特</option><option id="city93" value="93">惠州</option><option id="city67" value="67">葫芦岛</option><option id="city94" value="94">湖州</option><option id="city164" value="164">佳木斯</option><option id="city167" value="167">吉安</option><option id="city165" value="165">建德</option><option id="city97" value="97">江门</option><option id="city166" value="166">江阴</option><option id="city168" value="168">蛟河</option><option id="city169" value="169">焦作</option><option id="city58" value="58">嘉兴</option><option id="city170" value="170">揭阳</option><option id="city68" value="68">吉林</option><option id="city34" value="34">济南</option><option id="city171" value="171">晋城</option><option id="city172" value="172">景德镇</option><option id="city173" value="173">荆门</option><option id="city258" value="258">荆州</option><option id="city69" value="69">金华</option><option id="city70" value="70">济宁</option><option id="city174" value="174">晋中</option><option id="city96" value="96">锦州</option><option id="city175" value="175">九江</option><option id="city176" value="176">鸡西</option><option id="city177" value="177">开封</option><option id="city178" value="178">喀什</option><option id="city98" value="98">克拉玛依</option><option id="city21" value="21">昆明</option><option id="city256" value="256">昆山</option><option id="city99" value="99">莱芜</option><option id="city56" value="56">廊坊</option><option id="city19" value="19">兰州</option><option id="city20" value="20">拉萨</option><option id="city179" value="179">乐陵</option><option id="city180" value="180">乐山</option><option id="city54" value="54">连云港</option><option id="city181" value="181">聊城</option><option id="city182" value="182">辽阳</option><option id="city183" value="183">辽源</option><option id="city184" value="184">丽江</option><option id="city100" value="100">临汾</option><option id="city185" value="185">临江</option><option id="city71" value="71">临沂</option><option id="city186" value="186">六安</option><option id="city187" value="187">六盘水</option><option id="city188" value="188">浏阳</option><option id="city72" value="72">柳州</option><option id="city101" value="101">龙岩</option><option id="city73" value="73">洛阳</option><option id="city189" value="189">泸州</option><option id="city190" value="190">吕梁</option><option id="city102" value="102">马鞍山</option><option id="city191" value="191">茂名</option><option id="city192" value="192">梅河口</option><option id="city193" value="193">梅州</option><option id="city194" value="194">绵阳</option><option id="city195" value="195">牡丹江</option><option id="city25" value="25">南昌</option><option id="city196" value="196">南充</option><option id="city10" value="10">南京</option><option id="city30" value="30">南宁</option><option id="city41" value="41">南通</option><option id="city23" value="23">宁波</option><option id="city197" value="197">宁德</option><option id="city74" value="74">盘锦</option><option id="city103" value="103">番禺</option><option id="city198" value="198">攀枝花</option><option id="city199" value="199">萍乡</option><option id="city200" value="200">普洱</option><option id="city201" value="201">濮阳</option><option id="city202" value="202">迁安</option><option id="city9" value="9">青岛</option><option id="city203" value="203">清远</option><option id="city104" value="104">秦皇岛</option><option id="city75" value="75">齐齐哈尔</option><option id="city204" value="204">七台河</option><option id="city-1" value="-1">全国</option><option id="city76" value="76">泉州</option><option id="city205" value="205">曲阜</option><option id="city206" value="206">曲靖</option><option id="city207" value="207">衢州</option><option id="city208" value="208">仁怀</option><option id="city105" value="105">日照</option><option id="city209" value="209">瑞丽</option><option id="city210" value="210">汝州</option><option id="city211" value="211">三河</option><option id="city106" value="106">三亚</option><option id="city1" value="1">上海</option><option id="city212" value="212">商丘</option><option id="city213" value="213">上饶</option><option id="city48" value="48">汕头</option><option id="city214" value="214">汕尾</option><option id="city215" value="215">韶关</option><option id="city216" value="216">韶山</option><option id="city107" value="107">绍兴</option><option id="city12" value="12">沈阳</option><option id="city3" value="3">深圳</option><option id="city35" value="35">石家庄</option><option id="city217" value="217">十堰</option><option id="city218" value="218">寿光</option><option id="city219" value="219">顺德</option><option id="city220" value="220">朔州</option><option id="city221" value="221">四平</option><option id="city222" value="222">绥芬河</option><option id="city108" value="108">宿迁</option><option id="city5" value="5">苏州</option><option id="city111" value="111">泰安</option><option id="city77" value="77">台北</option><option id="city36" value="36">太原</option><option id="city110" value="110">台州</option><option id="city109" value="109">塘沽</option><option id="city47" value="47">唐山</option><option id="city223" value="223">滕州</option><option id="city4" value="4">天津</option><option id="city224" value="224">天水</option><option id="city225" value="225">铁岭</option><option id="city226" value="226">通化</option><option id="city112" value="112">铜陵</option><option id="city227" value="227">桐乡</option><option id="city228" value="228">吐鲁番</option><option id="city78" value="78">潍坊</option><option id="city79" value="79">威海</option><option id="city229" value="229">渭南</option><option id="city230" value="230">文登</option><option id="city46" value="46">温州</option><option id="city27" value="27">武汉</option><option id="city80" value="80">芜湖</option><option id="city15" value="15">乌鲁木齐</option><option id="city40" value="40">无锡</option><option id="city231" value="231">武夷山</option><option id="city31" value="31">厦门</option><option id="city17" value="17">西安</option><option id="city114" value="114">襄樊</option><option id="city259" value="259">香港</option><option id="city81" value="81">湘潭</option><option id="city260" value="260">襄阳</option><option id="city232" value="232">咸阳</option><option id="city233" value="233">荥阳</option><option id="city18" value="18">西宁</option><option id="city234" value="234">新民</option><option id="city113" value="113">新乡</option><option id="city235" value="235">信阳</option><option id="city236" value="236">新郑</option><option id="city237" value="237">宣城</option><option id="city82" value="82">徐州</option><option id="city238" value="238">延安</option><option id="city83" value="83">盐城</option><option id="city239" value="239">阳江</option><option id="city84" value="84">扬州</option><option id="city240" value="240">延吉</option><option id="city24" value="24">烟台</option><option id="city241" value="241">兖州</option><option id="city242" value="242">宜宾</option><option id="city116" value="116">宜昌</option><option id="city16" value="16">银川</option><option id="city261" value="261">营口</option><option id="city255" value="255">义乌</option><option id="city243" value="243">益阳</option><option id="city115" value="115">岳阳</option><option id="city244" value="244">玉林</option><option id="city245" value="245">运城</option><option id="city246" value="246">玉溪</option><option id="city247" value="247">枣庄</option><option id="city248" value="248">增城</option><option id="city249" value="249">张家港</option><option id="city250" value="250">张家界</option><option id="city119" value="119">漳州</option><option id="city85" value="85">湛江</option><option id="city120" value="120">肇庆</option><option id="city28" value="28">郑州</option><option id="city117" value="117">镇江</option><option id="city45" value="45">中山</option><option id="city118" value="118">舟山</option><option id="city44" value="44">珠海</option><option id="city251" value="251">涿州</option><option id="city86" value="86">株洲</option><option id="city43" value="43">淄博</option><option id="city252" value="252">遵化</option><option id="city253" value="253">遵义</option>
+			</select>&nbsp; 
+					<!--
+                        <label>排序：</label><select id="orderKey" name="status" onchange="">
+							<option value="0" >优先级</option>
+							<option value="1" >序号顺序</option>
+						</select>&nbsp; 
+					-->
+            <input onclick="searchKey()" value="查 询" type="button">&nbsp;&nbsp;
+			<input onclick="location.href='http://rrzadmin.renrenzhe.com/ad/addAdItem.jspx'" value="添 加" type="button">
+        </p>
+		<br>
+		<table width="100%" cellspacing="1" cellpadding="3">
+          <tbody id="list_table">
+			<tr class="head">
+				<td width="70px">序号</td>
+				<td width="60px">优先级</td>
+				<td width="90px">站名</td>
+				<td width="130px">城市</td>
+				<td width="130px">位置</td>
+				<td width="130px">分类</td>
+				<td width="82px">开始时间</td>
+				<td width="82px">结束时间</td>
+				<td>操作</td>
+			</tr>
+						
+			<tr id="item_341835776" class="">
+				<td>1<script type="text/javascript">$sa=new Array();$sa[0]=341835776;$sa[1]=0;$sid[$subscribe++]=$sa;</script></td>
+				<td>0</td>
+				<td>高朋团购</td>
+				<td title="全国">全国</td>
+				<td style="color: blue;">特别推荐</td>
+				<td>全部</td>
+				<td>2011-09-18</td>
+				<td>2012-12-12</td>
+				<td><span class="but_edit"><a href="javascript:delItem('341835776');">删除</a></span>&nbsp;<span class="but_edit"><a href="http://rrzadmin.renrenzhe.com/ad/editAdShow.jspx?id=341835776">编辑</a></span>&nbsp;<span class="but_edit"><a href="javascript:movedownItem('341835776')">下移↓</a></span><span class="but_edit">上移↑</span></td>
+			</tr>
+
+			<tr id="item_341835776" class="gl">
+				<td>2<script type="text/javascript">$sa=new Array();$sa[0]=341835776;$sa[1]=0;$sid[$subscribe++]=$sa;</script></td>
+				<td>0</td>
+				<td>高朋团购</td>
+				<td title="全国">全国</td>
+				<td style="color: blue;">特别推荐</td>
+				<td>全部</td>
+				<td>2011-09-18</td>
+				<td>2012-12-12</td>
+				<td><span class="but_edit"><a href="javascript:delItem('341835776');">删除</a></span>&nbsp;<span class="but_edit"><a href="http://rrzadmin.renrenzhe.com/ad/editAdShow.jspx?id=341835776">编辑</a></span>&nbsp;<span class="but_edit"><a href="javascript:movedownItem('341835776')">下移↓</a></span><span class="but_edit">上移↑</span></td>
+			</tr>
+            
+			<tr id="item_341835776" class="">
+				<td>3<script type="text/javascript">$sa=new Array();$sa[0]=341835776;$sa[1]=0;$sid[$subscribe++]=$sa;</script></td>
+				<td>0</td>
+				<td>高朋团购</td>
+				<td title="全国">全国</td>
+				<td style="color: blue;">特别推荐</td>
+				<td>全部</td>
+				<td>2011-09-18</td>
+				<td>2012-12-12</td>
+				<td><span class="but_edit"><a href="javascript:delItem('341835776');">删除</a></span>&nbsp;<span class="but_edit"><a href="http://rrzadmin.renrenzhe.com/ad/editAdShow.jspx?id=341835776">编辑</a></span>&nbsp;<span class="but_edit"><a href="javascript:movedownItem('341835776')">下移↓</a></span><span class="but_edit">上移↑</span></td>
+			</tr>
+          </tbody>
+		</table>
+        </div>
+	</div>
+
+    <div class="footer">
+        <p>
+            <div class="copyright">
+                <p>
+                    <a href="/">网站首页</a> | <a href="/">意见反馈</a> |
+                    <a href="mailto:hz@laidiantuan.com">联系我们</a> |
+                    <a href="tencent://message/?uin=2477359668&Site=来点团&Menu=yes" title="点击即可与来点团直接对话">在线客服</a> |
+                    <a href="http://www.miibeian.gov.cn">京ICP备11010872号-1</a> |
+                    <a href="http://www.laidiantuan.com">公安备110105006333</a>
+                </p>
+                <p>Copyright &copy; 2011 LaiDianTuan. All Rights Reserved.</p>
+                <p>来点团 版权所有</p>
+            </div>
+        </p>
+    </div></div>
+
+</body>
+</html>

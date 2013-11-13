@@ -1,0 +1,2 @@
+[result]
+flag=true

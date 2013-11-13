@@ -1,0 +1,95 @@
+{% load safe_filters %}{% load commerce_tags %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content ="团购,团购网,团购网站大全,团购导航,团购网站,团购网大全,团购网站导航,团购大全" name="keywords" />
+<meta content ="最好的中国团购网站大全,美团,糯米等每日团购网的团购网站导航!汇集北京团购网,上海团购网,和包括广州,深圳,南京,杭州,成都,青岛,西安等的团购网站大全和团购导航" name="description" />
+<title>迷你首页</title>
+<link media="screen" type="text/css" rel="stylesheet" href="{{ MEDIA_URL}}css/mini.css">
+</head>
+<body>
+<div class="content center">
+    <div class="title">
+        <span class="mt_l">网购每日精品---快乐购</span>
+        <span class="mt_r"><a class="mize" href="http://ldt.minimize" target="_blank"></a><a class="close" href="http://ldt.close" target="_blank"></a></span>
+    </div>
+    <div class="kuaijie">
+        <div class="k_l">您好！</div><div class="k_r"><a href="" target="_blank">购物车</a> | <a href="" target="_blank">充值</a> | <a href="" target="_blank">拍卖</a></div>
+    </div>
+    <div class="nv">
+        <div class="nv_on">
+            {% for category in categories %}
+            <span id="m_1{{ forloop.counter0 }}" {% if forloop.first %}class="on"{% endif %} onmouseover="setTimeout('Show_Tab(1,{{ forloop.counter0 }},{{ counter }})',20);"><a href="{{ category.url }}" target="_blank">{{ category.name }}</a></span>
+            {% endfor %}
+        </div>
+        <div class="tuan_ms">
+            <div id="tab_10" class="tuan">
+                <div class="tm_h">
+                </div>
+                <div class="tm_l">
+                    {% for deal in deals %}
+                    <div id="tab_2{{ forloop.counter0 }}" {% if forloop.counter0 >= 1 %}style="display:none;"{% endif %}>
+                        <div class="tuan_h">
+                            <div class="tt">
+                                <a href="{{ deal.deal_url }}" target="_blank">【{{ deal.website__name }}】{{ deal.title }}</a>
+                            </div>
+                        </div>
+                        <div class="tuan_b">
+                            <div class="tuan_bl">
+                                <div class="jg">
+                                    <ul class="t_ljg"><li>团购价</li><li>原价</li><li>折扣</li></ul>
+                                    <ul class="t_ljgs"><li>{{ deal.price }}</li><li><del>{{ deal.origin_price }}</del></li><li>{{ deal.discount }}</li></ul>
+                                </div>
+                                <div class="iq"><strong>￥{{ deal.price }}元</strong><a class="iq_a" href={{ deal.deal_url }} target="_blank"></a></div>
+                                <div class="tuan_mms">
+                                    <p class="pc"><strong>{{ deal.bought }}</strong>人已购买</p>
+                                    <p class="pc settime" endtime="{{ deal.end_date|date:'M d,Y H:i:s' }}"></p>
+                                    <p class="tss"><img src="{{ MEDIA_URL}}images/mini_gg.png" align="absbottom"> 已成团 , 可继续购买...</p>
+                                </div>
+                            </div>
+                            <div class="tuan_br">
+                                <a href="{{ deal.deal_url }}" target="_blank">
+                                    <img src="{{ MEDIA_URL }}{{ deal.image }}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="tm_r">
+                    {% for deal in deals %}
+                    <span id="m_2{{ forloop.counter0 }}" {% if forloop.first %}class="on"{% endif %} onmouseover="setTimeout('Show_Tab(2, {{ forloop.counter0 }}, {{ counter }})',20);"><a href="{{ deal.deal_url}}" target="_blank">{{ deal.title|safe_slice:":10" }}<br><font class="tj_1">团购价: </font><font class="tj_2">￥{{ deal.price }}</font></a><em class="on_bg"></em></span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="tab_11" style="display:none;">
+                {% retrieve_img 'shishangnvzhuang' %}
+                <div class="lady_r"><div class="lhead"><strong>今日精选女装商品200款:</strong><!--<a href="" target="_blank">外套</a><a href="" target="_blank">羽绒服</a><a href="" target="_blank">女裤</a><a href="" target="_blank">内衣</a>--><a href="{{ img.url }}" target="_blank">全部商品</a></div>
+                {% retrieve_items 'shishangnvzhuang' %}
+                </div>
+            </div>
+            <div id="tab_12" style="display:none;">
+                {% retrieve_img 'shishangnanzhuang' %}
+                <div class="lady_r"><div class="lhead"><strong>今日精选男装商品200款: </strong><a href="{{ img.url }}" target="_blank">全部商品</a></div>
+                {% retrieve_items "shishangnanzhuang" %}
+                </div>
+            </div>
+            <div id="tab_13" style="display:none;">
+                {% retrieve_img 'huazhuangpin' %}
+                <div class="lady_r"><div class="lhead"><strong>今日精选化妆品200款: </strong><a href="{{ img.url }}" target="_blank">全部商品</a></div>
+                {% retrieve_items 'huazhuangpin' %}
+                </div>
+            </div>
+            <div id="tab_14" style="display:none;">
+                {% retrieve_img 'taobaotejia' 'tejia' %}
+                <div class="tao_hot">
+                {% retrieve_items "taobaotejia" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.6.2.min.js"></script>
+<script src="{{ MEDIA_URL}}js/mini.js" type="text/javascript"></script>
+</body>
+</html>

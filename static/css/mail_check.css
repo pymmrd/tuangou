@@ -1,0 +1,13 @@
+.check_pass{float:left;width:958px;background:#edffcc;border:1px #e5e5cd solid;min-height:60px;margin-bottom:10px;}
+.check_pass .check_img{float:left;margin:10px 50px;background:url("http://static.laidiantuan.com/static/images/cg.jpg") no-repeat;}
+.check_about{float:left;margin-left:50px;line-height:1.8em;}
+.check_about li,.check_about p{color:#666;}
+.check_overdue{float:left;width:958px;background:#ffff9d;border:1px #e7c560 solid;min-height:60px;margin-bottom:10px;}
+.check_overdue .check_img{float:left;margin:10px 50px;background:url("http://static.laidiantuan.com/static/images/ts.jpg") no-repeat;}
+.check_about a{float:left;width:92px;height:33px;background:url("http://static.laidiantuan.com/static/images/cxaz1.png") no-repeat;margin-top:10px;}
+.check_about a:hover{float:left;width:92px;height:33px;background:url("http://static.laidiantuan.com/static/images/cxaz2.png") no-repeat;margin-top:10px;}
+.check_about .mail_input{height:30px;}
+.check_about .input_text{border:#dadada 1px solid;height:20px;line-height:20px;vertical-align:middle;}
+.check_about input[type="submit"]{width:92px;height:33px;background:url("http://static.laidiantuan.com/static/images/cxaz1.png") no-repeat;border:none;}
+.check_about form{margin-top:10px;*margin:10px 0px;}
+.check_about img{height:20px;margin-left:5px;vertical-align:middle;}

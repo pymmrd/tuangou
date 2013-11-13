@@ -1,0 +1,6 @@
+#!/bin/bash
+export DJANGO_SETTINGS_MODULE=tuangou.settings
+for i in 1 2 3 4 
+do
+    python2.6 /var/www/tuangou/manage.py celeryd -f /var/www/log/worker${i}.log --concurrency=4 -n worker${i} &  
+done

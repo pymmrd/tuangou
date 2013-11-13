@@ -1,0 +1,79 @@
+{% extends "base_site.html" %}{% block brand %}{% endblock %}{% block top_tab %}{% endblock %}{% block constrain %}{% endblock %}{% block category %}{% endblock %}{% block content %}
+<div style="border:#dadada 1px solid;line-height:1.8em;">
+	 <div style="margin-bottom:10px;font-size:14px;padding:20px 30px">
+	 <dl>
+	 <dt><strong>来点团导航网站开放接口</strong></dt>
+	 <dd>如果想被来点团收录，请按照以下格式提供API，并将API地址发送至laidiantuan@qq.com，通过审核后，我们将在第一时间收录您的团购产品信息。</dd>
+	 </dl></div>
+	 <div style="margin-left:30px;margin-bottom:10px;"><textarea id="id_comment" rows="50" cols="110" name="comment"><?xml version="1.0" encoding="utf-8" ?>
+	 <urlset>
+	 <url>
+		<loc>http://xxx.exampletuan.com/xxxxxx</loc>
+		<!-- 页面永久唯一的URL,即团购过期,或者不是当天也可访问的URL ［必填］-->
+		<data>
+		<website>美团</website>
+		<!-- 站点名称 ［必填］-->
+		<siteurl>http://xxx.exampletuan.com/beijing</siteurl>
+		<!-- 团购首页地址 ［必填］-->
+		<division>北京</division>
+		<!-- 城市名称（城市名称不需要附带省、市、区、县等字，如果是全国范围请指明：全国,并且在title中加入“全国”二字） ,必填］ -->
+		<title>雕刻时光甄选咖啡甜点套餐....</title>
+		<!-- 团购标题 ［必填］如果该团购属于全国范围，请在标题中注明全国字样 -->
+		<image>http://xxx.exampletuan.com/xxx.jpg</image>
+		<!-- 团购图片url ［必填］ -->
+		<startTime>2010-08-17 00:00:00</startTime>
+		<!-- 团购开始时间，可以使用上面时间格式
+			 或者将上面时间转成秒数格式 1281974400 , 如使用秒数格式，
+			 请测试 2010-08-17 00:00:00 转换后应该为 1281974400［必填］-->
+		<endTime>2010-08-18 00:00:00</endTime>
+		<!-- 团购结束时间,可以使用上面时间格式
+			 或者将上面时间转成秒数格式 1282060800 , 如使用秒数格式，
+			 请测试 2010-08-18 00:00:00 转换后应该为 1282060800［必填］-->
+		<originPrice>44.00</originPrice>
+		<!-- 商品原价 ［必填］-->
+		<price>24.00</price>
+		<!-- 商品现价 ［必填］-->
+		<rebate>4.8</rebate>
+		<!-- 商品折扣  [必填] -->
+		<bought>100</bought>
+		<!-- 已购买人数 ［必填］-->
+		<maxQuota>10000</maxQuota>
+		<!-- 最多购买人数 , 最高配额［选填］-->
+		<minQuota>10</minQuota>
+		<!-- 最少购买人数 , 有多少人参加团购才会成功的人数［选填］-->
+		<soldOut>no</soldOut>
+		<!-- yes/no 是否已卖光 [选填］ -->
+		<priority>0</priority>
+		<!-- 如果同时发布多个团购 用0-99数字表示团购的优先级
+		数字越小优先级越高 团购排序，会根据优先级由高到低进行
+		[选填]
+		-->
+		<detail><![CDATA[有效期3个月，截止至2010年11月13日
+		  营业时间：每日 9:00-24:00
+		  请至少提前1天致电预约
+		  每张美团券限1人使用
+		  仅限堂食，每桌可使用多张美团券
+		  不可与店内其他优惠同时使用
+		  本券从8月16日起开始使用]]></detail>
+		<!-- 重要提示信息 如果填写请认真如实填写［选填］-->
+		<!--为了更好展示您团购的信息，请尽量填写以下内容-->
+		<shops>
+			<shop>
+				<name>九头鹰方庄店</name>  <!-- 商家名称，  选埴 -->
+				<tel>01081533546</tel>  <!-- 联系电话， 选填 -->
+				<addr>朝阳区方庄路xx号</addr>	<!-- 地址信息, 选填 -->
+				<area>方庄</area>  <!-- 商圈, 选填 -->
+				<openTime>9:00-21:00</openTime> <!-- 商铺营业时间, 选填 -->
+				<longitude>36.345678</longitude> <!-- 经度  ,选填-->
+				<latitude>112.4567891</latitude>  <!-- 纬度 ,选填-->
+				<trafficInfo>944路、630路 海淀黄庄站下</trafficInfo> <!-- 公交信息 --> 
+			 </shop>
+		<!-- shop 可以多个 -->
+		</shops>
+		</data>
+	 </url>
+	 <url>
+		这里按照上面格式填写更多的团购信息，如果没有就不填，并且去掉这段文字外面的url标签
+	 </url>
+	</urlset>
+</textarea></div><div style="margin-bottom:10px;font-size:14px;padding:20px 30px"><dl><dt><strong>常见问题：</strong></dt><dd><p>1、请注意xml标签的大小写</p><p>2、时间通常都有时区问题，我们这里都采用GMT+8东八区，请务必对照我们的说明检查</p><p>3、API的内容大小应该控制在2M以内，如有API大小无法控制在2M以内请联系我们工作人员</p></dd></div></div>{% endblock %}

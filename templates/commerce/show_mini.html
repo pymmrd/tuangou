@@ -1,0 +1,36 @@
+{% load commerce_tags %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content ="团购,团购网,团购网站大全,团购导航,团购网站,团购网大全,团购网站导航,团购大全" name="keywords" />
+<meta content ="最好的中国团购网站大全,美团,糯米等每日团购网的团购网站导航!汇集北京团购网,上海团购网,和包括广州,深圳,南京,杭州,成都,青岛,西安等的团购网站大全
+和团购导航" name="description" />
+<title>迷你首页</title>
+<link media="screen" type="text/css" rel="stylesheet" href="{{ MEDIA_URL}}css/mini.css?1">
+</head>
+<body>
+<div class="content center">
+    <div class="title">
+        <span class="mt_l">每日精品团购---快乐购</span><span class="mt_r"><a class="mize" href="http://ldt.minimize" target="_blank"></a><a class="close" href="http://ldt.close" target="_blank"></a></span>
+    </div>
+    <div class="kuaijie"><div class="k_l">您好！</div>{% comment %}<div class="k_r"><a href="" target="_blank">购物车</a> | <a href="" target="_blank">充值</a> | <a href="" target="_blank">拍卖</a></div>{% endcomment %}</div>
+    <div class="nv">
+        <div class="nv_on">
+            {% for category in categories %}
+            <span {% if forloop.first %}class="on"{% endif %} name="{{ category.slug }}"><a href="http://www.laidiantuan.com/{{ city.slug }}/category/{{ category.slug }}/1/" target="_blank">{{ category.name }}</a></span>
+            {% endfor %}
+        </div>
+        <div class="tuan_ms">
+        {% mini_category_deal request city 'meishitianxia' %}
+        {% mini_category_deal request city 'fuzhuangshipin' %}
+        {% mini_category_deal request city 'xiuxianyule' %}
+        {% mini_category_deal request city 'huazhuangpin' %}
+        {% mini_category_deal request city 'meirongyangsheng' %}
+        {% mini_category_deal request city 'jiudianlvyou' %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.6.2.min.js"></script>
+<script src="{{ MEDIA_URL}}js/mini.js?1" type="text/javascript"></script>
+</body>
+</html>

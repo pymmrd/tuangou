@@ -1,0 +1,109 @@
+import operator
+import re
+from django.db.models import Q
+from django.conf import settings
+from tuangou.utils.querysetchain import QuerySetChain
+from tuangou.utils.cache import get_city_cache
+from tuangou.guider.filters import filter_process
+from tuangou.guider.models import ReDeal, Deal_Shop_City_District, District, City
+from tuangou.commerce.models import CustomCityDeal, CustomCategoryDeal,\
+    CustomDistrictDeal, CustomCategoryByDistrict
+
+FEATURE = 2
+def parse(link):
+    name = ''
+    regx = re.compile(r'http://(?P<domain>.+?\.com).+?')
+    domain = regx.match(link)
+    if domain is not None:
+        domain_name  = domain.group('domain')
+        try:
+            name = settings.SEARCH_ENGINE[domain_name]
+        except KeyError:
+            pass
+    return name
+
+def get_params(params):
+    ordering = params.get('ordering', '')
+    price = params.get('price', '')
+    return (ordering , price)
+
+def _get_spec_deals(city, district=None, category=None):
+    and_queries = []
+    quanguo = get_city_cache('quanguo')
+    city_query = Q(division=city)|Q(division=quanguo)
+    and_queries.append(city_query)
+    if category:
+        cats = category.get_active_children(include_self=True)
+        category_query = Q(category__in=cats)
+        and_queries.append(category_query)
+    if district:
+        district_query = Q(district=district)|Q(district__parent=district)
+        and_queries.append(district_query)
+    deals = ReDeal.nonexpires.filter(reduce(operator.and_, and_queries)).distinct()
+    return deals, and_queries
+
+def get_custom_deals(model, queryset, field, query, ordering, params):
+    values =('pk', 'title', 'end_date','image', 'start_date', 'deal_url', 'price', 'origin_price', 'discount', 'bought', 'is_ad', 'website__name')
+    queryset = queryset.values(*values)
+    if params and any(params):
+        object_list = filter_process(queryset, params)
+    else:
+        ad_deals = []
+        object_list = queryset.order_by('-pk')
+        ads_id = model.objects.values_list(field, flat=True).filter(reduce(operator.and_, query)).filter(attribute=FEATURE).order_by(ordering)
+        if ads_id:
+            ad_deals = [ReDeal.objects.values(*values).get(pk=pk) for pk in ads_id]
+            other_deal = queryset.exclude(pk__in=ads_id).order_by('-pk')
+            object_list = QuerySetChain(ad_deals, other_deal)
+    return object_list
+
+def _get_district_deals(param, city, district):
+    params = get_params(param)
+    deals, and_queries = _get_spec_deals(city, district)
+    object_list = get_custom_deals(CustomDistrictDeal, deals, 'deal_id', 
+                                and_queries, 'position', params)
+    return object_list
+
+def _get_category_deals(city, category, param=None):
+    params = get_params(param) if param else None
+    deals, and_queries = _get_spec_deals(city, category=category)
+    object_list = get_custom_deals(CustomCategoryDeal, deals, 'deal_id', and_queries, 'position', params)
+    return object_list, object_list.count()
+
+def _get_district_category(param, city, district, category):
+    params = get_params(param) if param else None
+    deals, and_queries = _get_spec_deals(city, district, category)
+    object_list = get_custom_deals(CustomCategoryByDistrict, deals, 'deal_id', 
+        and_queries, 'position', params)
+    return object_list
+
+def add_ad_flag(request):
+    refer = ''
+    ad_flag = False
+    ordering = request.GET.get('ordering', None)
+    price = request.GET.get('price', None)
+    if not price and not ordering:
+        refer = request.META.get('HTTP_REFERER', None)
+        refer = parse(refer) if refer  else ''
+        ad_flag = True
+    return (ad_flag, refer)
+
+def get_feature_deal(city):
+    try:
+        deal_id = CustomCityDeal.objects.values_list('deal_id', flat=True).get(is_active=True, division=city, attribute=FEATURE)
+    except CustomCityDeal.DoesNotExist:
+        deal=None
+    else:
+        deal = ReDeal.objects.values('pk', 'website__name', 'bought', 'price', 'title', 'image', 'discount', 'origin_price').get(pk=deal_id)
+    return deal
+
+def get_tags(slug):
+    banner_site = "tags/banner/%s_site.html" % slug
+    seller_chart = "tags/seller/%s_seller_chart.html" % slug
+    view_chart = "tags/view/%s_view_chart.html" %  slug
+    return banner_site, seller_chart, view_chart
+
+def _rotate_category_index(rows, column,  pageone):
+    number = rows * column
+    offset =number if pageone > number else pageone
+    return offset

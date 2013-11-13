@@ -1,0 +1,4 @@
+#!/bin/bash
+export DJANGO_SETTINGS_MODULE=tuangou.settings
+cd /var/www/tuangou
+python2.6 /var/www/tuangou/manage.py worker_inspect

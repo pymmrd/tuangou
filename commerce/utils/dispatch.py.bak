@@ -1,0 +1,167 @@
+#from pylib
+import os
+import random
+from datetime import datetime 
+from collections import defaultdict
+#from django
+from django.db.models import Q
+from django.conf import settings
+#from tuangou
+from tuangou.utils import get_log_path, dump_data, load_pickle_data
+from tuangou.commerce.models import Advertisement, CityConstrain
+
+SUFFIX_MAC_FILE = 'mac.pk'
+AD_FILE = 'ad.pk'
+
+def get_mac_filename(mac):
+    return  mac[0] + SUFFIX_MAC_FILE
+
+def get_pickle_file(filename):
+    log_path = get_log_path(settings.AD_AUDIT)
+    file_path = os.path.join(log_path, filename)
+    return file_path
+
+def get_active_ads(city):
+    ads = Advertisement.actives.filter(
+        Q(dispatch_city=city)|Q(dispatch_city=None))
+    return ads
+
+def _get_mac_dict(file_path):
+    mac_dict = {}
+    if os.path.exists(file_path):
+        mac_dict = load_pickle_data(file_path)
+    return mac_dict
+
+def get_dispatched_ads_by_mac(mac):
+    dispatched = None
+    filename = get_mac_filename(mac)
+    file_path = get_pickle_file(filename)
+    mac_dict = _get_mac_dict(file_path)
+    if mac_dict:
+        try:
+            dispatched = mac_dict[mac] 
+        except KeyError:
+            pass
+    return dispatched
+
+def _gen_mac_dict(mac_dict, mac, id):
+    mac_dict.setdefault(mac, []).append(id)
+    return mac_dict
+
+def get_distinct_ads(request):
+    number = 0
+    times_dict = {}
+    result_list = []
+    city = request.session.get('city', None)
+    mac = request.GET.get('MAC', None)
+    queryset = get_active_ads(city)
+    check_list= get_dispatched_ads_by_mac(mac)
+    if check_list:
+        queryset = queryset.exclude(id__in=check_list)
+    log_path = get_pickle_file(AD_FILE)
+    if os.path.exists(log_path):
+        times_dict = load_pickle_data(log_path)
+    for ad in queryset:
+        if number < settings.AD_PREFETCH_ONE_TIME :
+            ad_id = ad.id
+            try:
+                c_c = ad.cityconstrain.active().get(division=city)
+            except CityConstrain.DoesNotExist:
+                flag = check_constrains(ad, times_dict, ad_id, 'counter')
+                if not flag:
+                    continue
+            else:
+                flag = check_constrains(c_c, times_dict, ad_id, city.name)
+                if not flag:
+                    continue
+            result_list.append(ad)
+            number += 1
+    return result_list
+
+def check_constrains(ad, times_dict, ad_id, key, cc=None):
+    flag = True
+    now  = datetime.now()
+    start_time = ad.start_time
+    expire_time = ad.expire_time
+    start_time_per_day = ad.start_time_per_day
+    end_time_per_day = ad.expire_time_per_day
+    show_times_per_day = ad.show_times_per_day
+    show_times = ad.show_times
+    if start_time_per_day and now < start_time_per_day:
+        flag = False
+    if flag and end_time_per_day and now > end_time_per_day:
+        flag = False
+    if flag and show_times_per_day:
+        if times_dict:
+            counter_dict = times_dict.get(ad_id, None)
+            if counter_dict:
+                counter = counter_dict.get(key, None)
+                if counter and counter >= show_times_per_day:
+                    flag = False
+    if not flag and show_times:
+        if ad.sub_total >= show_times:
+            ad.is_active = False
+            ad.save()
+            flag = False
+    if not flag and cc:
+        cc_show_times = cc.show_times
+        if cc_show_times >= cc.sub_total:
+            cc.is_active = False
+            cc.save()
+            flag = False
+    if flag and start_time and now < start_time:
+        flag = False
+    if flag and expire_time and now >= expire_time:
+        ad.is_active = False
+        ad.save()
+        flag = False
+    return flag
+
+def check_validity(request, ad_id):
+    show_times_dict = {}
+    mac = request.GET.get('MAC', None)
+    city = request.session.get('city', None)
+    ad = Advertisement.objects.get(id=ad_id)
+    log_path = get_pickle_file(AD_FILE)
+    if os.path.exists(log_path):
+        show_times_dict = load_pickle_data(log_path)
+    ad_id = ad.id
+    name = 'counter'
+    try:
+        c_c = ad.cityconstrain.active().get(division=city) 
+    except CityConstrain.DoesNotExist:
+        flag = check_constrains(ad, show_times_dict, ad_id, name) 
+        if flag:
+            show_times_dict = increase_show_times(ad, show_times_dict, name) 
+    else:
+        cc_key = city.name
+        flag = check_constrains(ad, show_times_dict, ad_id, cc_key, c_c)
+        if flag:
+            show_times_dict = increase_show_times(ad, show_times_dict, name, cc_key, c_c) 
+    #dump ad show times
+    dump_data(log_path, show_times_dict)
+    #dump ad dispatched 
+    dump_dispatched_ad(mac, ad_id)
+    return flag
+
+def dump_dispatched_ad(mac, ad_id):
+    filename = get_mac_filename(mac)
+    file_path = get_pickle_file(filename)
+    mac_dict = _get_mac_dict(file_path) 
+    mac_dict = _gen_mac_dict(mac_dict, mac, ad_id)
+    dump_data(file_path, mac_dict)
+
+def _increase_times(obj):
+    total_times = obj.show_times
+    obj.sub_total += 1
+    if total_times and obj.sub_total >= total_times:
+        obj.is_active = False
+    obj.save()
+
+def increase_show_times(ad, times_dict, key, cc_key=None, cc=None):
+    times_dict.setdefault(ad.id, defaultdict(int))[key] += 1
+    _increase_times(ad)
+    if cc:
+        times_dict.setdefault(ad.id, defaultdict(int))[cc_key] += 1
+        _increase_times(cc)
+    return times_dict

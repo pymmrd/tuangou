@@ -1,0 +1,25 @@
+{% load safe_filters %}
+{% load guider_tags %}
+<div id="{{ slug }}" class="tuan" style="display:none">
+    <div class="tm_h"></div>
+    <div class="tm_l">
+        {% for deal in deals %}
+        <div id="deal_{{ deal.pk }}" {% if forloop.counter0 >= 1 %}style="display:none;"{% endif %}> 
+            <div class="tuan_h"><div class="tt"><a href="{{ deal.deal_url }}" name="{{ slug }}_{{ forloop.counter }}" target="_blank">【<b>{% get_website deal.website__id %}</b>】{{ deal.title }}</a></div></div>
+            <div class="tuan_b">
+                <div class="tuan_bl">
+                    <div class="jg"><ul class="t_ljg"><li>团购价</li><li>原价</li><li>折扣</li></ul><ul class="t_ljgs"><li>{{ deal.price }}</li><li><del>{{ deal.origin_price }}</del></li><li>{{ deal.discount }}</li></ul></div>
+                    <div class="iq"><strong>￥{{ deal.price }}元</strong><a class="iq_a" href={{ deal.deal_url }} target="_blank"></a></div>
+                    <div class="tuan_mms"><p class="pc"><strong>{{ deal.bought }}</strong>人已购买</p><p class="pc settime" endtime="{{ deal.end_date|date:'Y,n,j,G,i,s' }}"></p><p class="tss"><img src="{{ MEDIA_URL}}images/mini_gg.png" align="absbottom"> 已成团 , 可继续购买...</p></div>
+                </div>
+                <div class="tuan_br"><a href="{{ deal.deal_url }}" name="{{ slug }}_{{ forloop.counter }}" target="_blank"><img src="{{ MEDIA_URL }}{{ deal.image }}"></a></div>
+            </div>  
+        </div>  
+        {% endfor %}
+    </div>  
+    <div class="tm_r">
+        {% for deal in deals %}
+        <span name="{{ deal.pk }}" {% if forloop.first %}class="on"{% endif %}><a href="{{ deal.deal_url}}" name="{{ slug }}_{{ forloop.counter }}" target="_blank"><b>【{% get_website deal.website__id %}</b>】{{ deal.title|safe_slice:":25" }}<br><font class="tj_1">团购价: </font><font class="tj_2">￥{{ deal.price }}</font></a><em class="on_bg"></em></span>
+        {% endfor %}
+    </div>  
+</div>

@@ -1,0 +1,19 @@
+{% load safe_filters %}{% load guider_tags %}<dl class="tuan_box" id="{{ object.pk }}">
+<input type="hidden" class="hidden" name="{{ refer }}" value="{{ page_flag }}_{{ area }}{% position forloop.counter page index %}" title="{{ object.website__name }}" />
+<b class="r1"></b><b class="r2"></b>
+{% if object.start_date.date == today %}<div class="t_l"></div>{% endif %}
+<div class="djs"></div>
+<span class="sjss settime" endtime="{{ object.end_date|date:'Y,m,d,H,i,s'}}"></span>
+<div class="tuan_box_img"><a {% if page == 1 %}class="adver"{% endif %} href="{{ object.deal_url }}" target="_blank"  name="{{ object.pk }}"><img src="{% if object.image %}{{ MEDIA_URL }}{{ object.image }}{% endif %}"/></a></div>
+<div class="tp"><span><a {% if page == 1 %}class="adver"{% endif %} href="{{ object.deal_url }}" target="_blank" name="{{ object.pk }}">[{{ object.website__name }}]</a></span>
+<a {% if page == 1 %}class="adver"{% endif %} href="{{ object.deal_url }}" target="_blank" name="{{ object.pk }}">{{ object.title|safe_slice:":35"}}</a></div>
+<div class="t_price">
+<div class="ditu"><a {%if page == 1 %}class="adver"{% endif %} target="_blank" href="{{ object.deal_url }}" name="{{ object.pk }}">{{ city.name }}</a></div>
+<div class="goumai"><a {% if page == 1 %}class="adver"{% endif %} href="{{ object.deal_url }}" target='_blank' name="{{ object.pk }}"></a></div>
+团购价:￥<ins class="ins">{{ object.price }}</ins><br />折扣:<span>{{ object.discount }}折</span><br/>
+原价:￥<del class="del">{{ object.origin_price }}</del><br/>
+ 已售:{{ object.bought }}人<br/>
+</div>
+<b class="r3"></b>
+<b class="r4"></b>
+</dl>

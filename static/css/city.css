@@ -1,0 +1,24 @@
+.show_city{width:44px;height:26px;color:#535353;font-size:18px;font-weight:bold;margin-top:25px;margin-left:0px;float:left;}
+/*.c_city a{width:81px;height:26px;float:left;margin-top:20px;margin-left:0px;background:url("http://static.laidiantuan.com/static/images/c_city.gif") no-repeat;}*/
+/*.c_city a:hover{background:url("http://static.laidiantuan.com/static/images/c_city.gif") no-repeat;}*/
+.choose{position:absolute;top:88px;margin-left:0 auto;width:612px;background:#fff;z-index:100;padding:10px;display:none;border:#DADADA 8px solid;border-radius:8px 8px 8px 8px;opacity:0.95;filter:alpha(opacity=95);-moz-opacity:0.95;}
+.choose .hot{float:left;font-size:12px;color:#FF4400;font-weight:bold;}
+.choose dl{background:#666;font-size:14px;font-family:黑体;padding:10px;color:#fff;}
+.choose ul{width:610px;float:left;clear:both}
+.choose .nob{float:left;width:20px;font-size:14px;color:#535353;}
+.choose .c{float:left;margin-top:-4px;}
+.choose .iul{height:25px;border-bottom:#DADADA 1px dashed;}
+.choose .text{width:200px;height:16px;line-height:16px;margin-left:5px;margin-top:5px;color:#939393;background:#fff;border:solid 1px #e1e1e1;padding:5px 5px;vertical-align:middle;}
+.choose .city_name{width:610px;height:400px;overflow-y:auto;}
+.choose .city_name ul{width:550px;}
+.choose li{margin-bottom:5px;float:left;margin-left:5px;white-space:nowrap;padding:2px}
+.choose li a{text-align:center;padding-bottom:2px;padding-left:2px;padding-right:2px;display:block;color:#535353;padding-top:2px;}
+.choose li a:hover{background:#ff720c 0px 0px;color:#535353}
+.choose li a.normal {text-align:center;padding-bottom:2px;padding-left:2px;padding-right:2px;display:block;color:#ffffff;padding-top:2px;}
+.choose .over{background:#FFCC00;font-weight:bold;}
+a .white{color:#535353;text-decoration:none;}
+.choose .other {zoom:1;clear:both;font-size:12px;border-top:#fff 1px dashed;padding-top:5px}
+.choose .other a {float:right;color:#FFCC00;font-family:Arial;}
+.choose td {vertical-align:top;}
+.other-city a{display:inline;float:left;width:40px;height:23px;line-height:24px;overflow:hidden;background:#fff;border:solid 1px #ffca7e;text-align:center;margin:6px 0 0 5px;}
+.other-city a:hover{text-decoration:none;background:#f4811c;border-color:#f4811c;color:#fff;}

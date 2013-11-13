@@ -1,0 +1,10 @@
+[task]
+size=1
+[task1]
+x=602
+y=433
+miniweb=1
+prweb=1
+dragarea=(0, 0, 530, 30) 
+url1=http://{{ request.META.HTTP_HOST }}{% url verify-mini %}
+url2=http://{{ request.META.HTTP_HOST }}{% url show-mini %}

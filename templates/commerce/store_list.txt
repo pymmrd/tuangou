@@ -1,0 +1,8 @@
+[Time]
+OnceTime=1800
+[Size]
+Num = {{ count }}
+[URL]
+{% for store in store_list %}
+url_{{ forloop.counter }} = {{ store.domain }}
+{% endfor %}

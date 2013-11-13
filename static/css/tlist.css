@@ -1,0 +1,12 @@
+.t_all{float:left;width:958px;height:auto!important;border:#dadada 1px solid;padding-bottom:10px;margin-bottom:10px;}
+.t_all .dt{width:958px;height:30px;border-bottom:#dadada 1px solid;}
+.t_all .dt strong{color:#626262;float:left;font-size:14px;margin-left:10px;margin-top:6px;}
+.t_all .dt span{float:left;margin-top:6px;}
+.t_all .dt a{color:#fe740b;font-size:14px;font-weight:bold;float:left;margin-left:20px;}
+.t_all .dd{float:left;margin-left:10px;margin-top:10px;width:938px;border-bottom:#fe740b 0px solid;}
+.t_all .dd .zimu{width:20px;height:20px;margin-top:5px;margin-left:20px;float:left;border:#dadada 1px solid;background:#fe740b;}
+.t_all .dd .zimu a{color:#fff;float:left;margin-left:5px;font-size:16px;}
+.t_all .dialog{width:858px;border:#dadada 1px solid;float:left;margin-left:10px;}
+.t55{width:100%;height:auto!important;min-height:20px;*height:40px;overflow:hidden;clear:both;float:left;margin-left:10px;padding-bottom:10px;}
+.t55 li{width:85px;float:left;line-height:14px;padding:8px 0px 0px;white-space:nowrap;}
+.t55 li a{color:#666666;float:left;}
